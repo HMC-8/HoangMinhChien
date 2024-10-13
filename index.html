@@ -32,9 +32,10 @@
             display: inline-block; /* Căn giữa avatar và viền */
             border-radius: 50%; /* Để viền có hình tròn */
             overflow: hidden; /* Ẩn phần thừa ra ngoài */
-            width: 110px; /* Kích thước bao quanh */
-            height: 110px; /* Kích thước bao quanh */
+            width: 120px; /* Kích thước bao quanh */
+            height: 120px; /* Kích thước bao quanh */
             animation: border-animation 3s infinite; /* Thêm hiệu ứng đổi màu */
+            border: 5px solid rgba(255, 255, 255, 0.8); /* Viền trắng mờ */
         }
 
         @keyframes border-animation {
@@ -42,16 +43,16 @@
                 box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); /* Bắt đầu với viền trắng */
             }
             50% {
-                box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); /* Viền trắng rõ ràng */
+                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5); /* Viền trắng rõ ràng */
             }
             100% {
-                box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5); /* Chuyển sang viền đen */
+                box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.5); /* Chuyển sang viền đen */
             }
         }
 
         .profile-img {
-            width: 100px; /* Đặt chiều rộng cho ảnh */
-            height: 100px; /* Đặt chiều cao cho ảnh */
+            width: 100%; /* Đặt chiều rộng cho ảnh bằng với viền */
+            height: 100%; /* Đặt chiều cao cho ảnh bằng với viền */
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
             margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
@@ -159,7 +160,4 @@
         <div class="line" style="top: 50px; animation: fall 12s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
         <div class="line" style="top: 100px; animation: fall 8s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
         <div class="line" style="top: 150px; animation: fall 11s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-        <div class="line" style="top: 200px; animation: fall 9s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-    </div>
-</body>
-</html>
+        <div class="line" style="top: 200px; animation: fall 9s linear infinite;">
