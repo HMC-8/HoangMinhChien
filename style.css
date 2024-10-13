@@ -1,11 +1,8 @@
+/* CSS cho hiệu ứng loading */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
-    background-size: cover; /* Phủ kín hình nền */
-    background-position: center; /* Căn giữa hình nền */
-    height: 100vh; /* Chiều cao toàn bộ viewport */
 }
 
 #loading {
@@ -14,20 +11,21 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 1000;
+    justify-content: center;
+    z-index: 9999; /* Đảm bảo loading ở trên cùng */
+    animation: fade 1s infinite alternate; /* Hiệu ứng nháy */
 }
 
 .spinner {
-    border: 10px solid rgba(255, 255, 255, 0.3); /* Màu viền bên ngoài */
-    border-top: 10px solid #76FF03; /* Màu viền bên trên (xanh lá) */
-    border-radius: 50%; /* Cắt tròn */
-    width: 100px; /* Kích thước vòng tròn */
-    height: 100px; /* Kích thước vòng tròn */
-    animation: spin 1s linear infinite; /* Hiệu ứng xoay */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top: 8px solid #3498db; /* Màu sắc cho phần trên */
+    animation: spin 1s linear infinite, change-color 1s linear infinite; /* Hiệu ứng xoay và đổi màu */
 }
 
 @keyframes spin {
@@ -35,60 +33,63 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+@keyframes change-color {
+    0% { border-top-color: #3498db; } /* Màu xanh */
+    25% { border-top-color: #e74c3c; } /* Màu đỏ */
+    50% { border-top-color: #f1c40f; } /* Màu vàng */
+    75% { border-top-color: #2ecc71; } /* Màu xanh lá */
+    100% { border-top-color: #9b59b6; } /* Màu tím */
+}
+
+@keyframes fade {
+    0% { background: rgba(255, 255, 255, 0.9); }
+    100% { background: rgba(0, 0, 0, 0.1); } /* Nháy sang màu đen nhạt */
+}
+
 .container {
-    max-width: 600px;
+    display: none; /* Ẩn nội dung chính cho đến khi loading xong */
+    max-width: 800px;
     margin: auto;
     padding: 20px;
-    text-align: center; /* Căn giữa tất cả văn bản */
-    position: relative;
+}
+
+header {
+    text-align: center;
 }
 
 .profile-img {
-    width: 100px; /* Đặt chiều rộng cho ảnh */
-    height: 100px; /* Đặt chiều cao cho ảnh */
-    border-radius: 50%; /* Cắt ảnh thành hình tròn */
-    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
-    margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
-}
-
-h1, p {
-    margin: 10px 0;
-    color: white; /* Màu chữ trắng cho tên */
+    width: 150px;
+    border-radius: 50%;
 }
 
 nav {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 nav ul {
-    list-style: none; /* Bỏ dấu đầu dòng */
-    padding: 0; /* Bỏ khoảng cách padding */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các liên kết xuống dòng */
+    list-style-type: none;
+    padding: 0;
+    justify-content: center; /* Canh giữa các liên kết */
 }
 
-nav ul li {
-    margin: 15px 0; /* Khoảng cách giữa các liên kết */
+nav li {
+    margin: 10px; /* Khoảng cách giữa các liên kết */
 }
 
-nav ul li a {
-    display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
-    text-decoration: none; /* Bỏ gạch chân */
-    color: black; /* Màu chữ */
-    background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
-    padding: 15px 25px; /* Khoảng cách bên trong */
-    border-radius: 30px; /* Bo tròn góc */
-    border: 2px solid white; /* Viền trắng đậm */
-    font-weight: bold; /* Chữ đậm */
-    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
-}
-
-nav ul li a:hover {
-    background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
-    transform: scale(1.05); /* Tăng kích thước khi hover */
+nav a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold; /* Đậm chữ cho các liên kết */
 }
 
 footer {
-    text-align: center;
+    margin-top: 20px; /* Khoảng cách phía trên footer */
+    text-align: center; /* Canh giữa nội dung footer */
+}
+
+#music-controls {
+    text-align: center; /* Canh giữa nút tắt nhạc */
     margin-top: 20px;
-    font-size: 12px;
-    color: #777;
 }
