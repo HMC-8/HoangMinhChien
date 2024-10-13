@@ -120,14 +120,14 @@
 </head>
 <body>
     <audio id="background-music" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/2e4d0e3a0ada1b97a48cb05cc0dc89a68f41a4f8/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/2e4d0e3a0ada1b97a48cb05cc0dc89a68f41a4f8/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%Ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏 🇻🇳</h1> <!-- Tên đã chỉnh sửa -->
+            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1> <!-- Tên đã chỉnh sửa -->
             <p>Xin chào, đây là thông tin của tôi!</p> <!-- Nội dung đã được sửa -->
         </header>
         <nav>
@@ -141,7 +141,7 @@
         </nav>
 
         <div class="music-controls">
-            <button id="toggle-music-button">Bật/Tắt nhạc "Tuyệt nàng đi"</button>
+            <button id="toggle-music-button">Bật nhạc "Tuyệt nàng đi"</button>
         </div>
 
         <footer>
@@ -164,16 +164,15 @@
         const toggleButton = document.getElementById('toggle-music-button');
         let isPlaying = false;
 
+        // Kiểm tra âm thanh có thể phát được không
+        audio.addEventListener('canplaythrough', () => {
+            toggleButton.disabled = false; // Bật nút nếu âm thanh đã sẵn sàng
+        });
+
         toggleButton.addEventListener('click', () => {
             if (isPlaying) {
                 audio.pause();
                 toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
             } else {
-                audio.play();
-                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
-</body>
-</html>
+                audio.play().catch((error) => {
+                    console.error("Lỗi phát nhạc:", error);
