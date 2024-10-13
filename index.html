@@ -18,7 +18,7 @@
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.9); /* Nền trắng trong suốt */
+            background: rgba(255, 255, 255, 0.9); /* Nền trắng nhạt */
             padding: 40px;
             border-radius: 10px; /* Bo tròn góc */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho container */
@@ -30,6 +30,14 @@
 
         header {
             margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 100px; /* Đặt chiều rộng cho ảnh */
+            height: 100px; /* Đặt chiều cao cho ảnh */
+            border-radius: 50%; /* Cắt ảnh thành hình tròn */
+            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+            margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
         }
 
         h1 {
@@ -77,21 +85,11 @@
 <body>
     <div class="container">
         <header>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Your short bio or description goes here.</p>
         </header>
         <nav>
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
-                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
-            </ul>
-        </nav>
-        <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-        </footer>
-    </div>
-</body>
-</html>
+                <li><a href="https://t.me/HoangMinhChien_
