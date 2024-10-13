@@ -1,6 +1,12 @@
-// Hiện thị nội dung sau khi loading
-window.onload = function() {
-    document.getElementById('loading').style.display = 'none'; // Ẩn loading
-    document.querySelector('.container').style.display = 'block'; // Hiện nội dung chính
-    // Âm thanh đã được phát tự động nhờ thuộc tính autoplay
-};
+const music = document.getElementById('background-music');
+const toggleButton = document.getElementById('toggle-music');
+
+toggleButton.addEventListener('click', () => {
+    if (music.muted) {
+        music.muted = false; // Bật âm thanh
+        toggleButton.textContent = 'Tắt Nhạc'; // Đổi nội dung nút
+    } else {
+        music.muted = true; // Tắt âm thanh
+        toggleButton.textContent = 'Bật Nhạc'; // Đổi nội dung nút
+    }
+});
