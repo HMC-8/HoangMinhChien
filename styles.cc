@@ -1,24 +1,14 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-}
-
 .container {
     max-width: 600px;
     margin: auto;
-    background: transparent; /* Nền trong suốt */
+    background: transparent; /* Thay đổi nền sang trong suốt */
     padding: 40px;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    text-align: center; 
+    text-align: center;
 }
 
 nav ul li a {
