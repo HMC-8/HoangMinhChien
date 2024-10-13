@@ -32,24 +32,6 @@
             margin-bottom: 20px;
         }
 
-        .profile-img-container {
-            display: inline-block; /* Để căn giữa viền với ảnh */
-            border-radius: 50%; /* Cắt viền thành hình tròn */
-            padding: 5px; /* Khoảng cách giữa viền và ảnh */
-            border: 5px solid; /* Viền xung quanh ảnh */
-            border-image: linear-gradient(45deg, white, black) 1; /* Viền xen kẽ trắng đen */
-            animation: rotate 4s linear infinite; /* Xoay viền */
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
         .profile-img {
             width: 100px; /* Đặt chiều rộng cho ảnh */
             height: 100px; /* Đặt chiều cao cho ảnh */
@@ -123,9 +105,7 @@
 
     <div class="container">
         <header>
-            <div class="profile-img-container">
-                <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            </div>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1 class="moving-text">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p class="moving-text">Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung -->
         </header>
