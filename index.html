@@ -9,31 +9,31 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
-            background-size: cover; /* Phủ kín hình nền */
-            background-position: center; /* Căn giữa hình nền */
-            height: 100vh; /* Chiều cao toàn bộ viewport */
-            overflow: hidden; /* Ẩn thanh cuộn */
+            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
-            text-align: center; /* Căn giữa tất cả văn bản */
+            text-align: center;
             position: relative;
             top: 50%;
-            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+            transform: translateY(-50%);
         }
 
         .profile-img {
-            width: 100px; /* Đặt chiều rộng cho ảnh */
-            height: 100px; /* Đặt chiều cao cho ảnh */
-            border-radius: 50%; /* Cắt ảnh thành hình tròn */
-            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
-            margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
-            border: 5px solid transparent; /* Viền ban đầu */
-            animation: border-animation 5s infinite alternate; /* Hiệu ứng viền */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 5px solid transparent;
+            animation: border-animation 5s infinite alternate;
         }
 
         @keyframes border-animation {
@@ -43,7 +43,7 @@
 
         h1, p {
             margin: 10px 0;
-            color: white; /* Màu chữ trắng cho tên */
+            color: white;
         }
 
         nav {
@@ -51,29 +51,29 @@
         }
 
         nav ul {
-            list-style: none; /* Bỏ dấu đầu dòng */
-            padding: 0; /* Bỏ khoảng cách padding */
+            list-style: none;
+            padding: 0;
         }
 
         nav ul li {
-            margin: 15px 0; /* Khoảng cách giữa các liên kết */
+            margin: 15px 0;
         }
 
         nav ul li a {
-            display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
-            text-decoration: none; /* Bỏ gạch chân */
-            color: black; /* Màu chữ */
-            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
-            padding: 15px 25px; /* Khoảng cách bên trong */
-            border-radius: 30px; /* Bo tròn góc */
-            border: 2px solid white; /* Viền trắng đậm */
-            font-weight: bold; /* Chữ đậm */
-            transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 2px solid white;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         nav ul li a:hover {
-            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
-            transform: scale(1.05); /* Tăng kích thước khi hover */
+            background-color: rgba(240, 240, 240, 0.9);
+            transform: scale(1.05);
         }
 
         footer {
@@ -101,34 +101,19 @@
         .music-controls button:hover {
             background-color: rgba(240, 240, 240, 0.9);
         }
-
-        /* CSS cho các ký tự 1 và 0 */
-        .falling-ones-zeros {
-            position: absolute;
-            white-space: nowrap;
-            font-size: 20px; /* Kích thước chữ */
-            color: lime; /* Màu xanh lá */
-            opacity: 0.7;
-            animation: fall linear infinite; /* Hiệu ứng rơi */
-        }
-
-        @keyframes fall {
-            0% { top: -10%; }
-            100% { top: 100%; }
-        }
     </style>
 </head>
 <body>
-    <audio id="background-music" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/2e4d0e3a0ada1b97a48cb05cc0dc89a68f41a4f8/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%Ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+    <audio id="background-music" preload="auto" loop>
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/2e4d0e3a0ada1b97a48cb05cc0dc89a68f41a4f8/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1> <!-- Tên đã chỉnh sửa -->
-            <p>Xin chào, đây là thông tin của tôi!</p> <!-- Nội dung đã được sửa -->
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
+            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
         <nav>
             <ul>
@@ -149,30 +134,30 @@
         </footer>
     </div>
 
-    <!-- Các ký tự 1 và 0 -->
-    <div class="falling-ones-zeros" style="left: 5%;">1</div>
-    <div class="falling-ones-zeros" style="left: 15%; animation-duration: 4s;">0</div>
-    <div class="falling-ones-zeros" style="left: 25%; animation-duration: 6s;">1</div>
-    <div class="falling-ones-zeros" style="left: 35%; animation-duration: 5s;">0</div>
-    <div class="falling-ones-zeros" style="left: 45%; animation-duration: 3s;">1</div>
-    <div class="falling-ones-zeros" style="left: 55%; animation-duration: 7s;">0</div>
-    <div class="falling-ones-zeros" style="left: 65%; animation-duration: 4.5s;">1</div>
-    <div class="falling-ones-zeros" style="left: 75%; animation-duration: 5.5s;">0</div>
-
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
         let isPlaying = false;
-
-        // Kiểm tra âm thanh có thể phát được không
-        audio.addEventListener('canplaythrough', () => {
-            toggleButton.disabled = false; // Bật nút nếu âm thanh đã sẵn sàng
-        });
 
         toggleButton.addEventListener('click', () => {
             if (isPlaying) {
                 audio.pause();
                 toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
             } else {
-                audio.play().catch((error) => {
-                    console.error("Lỗi phát nhạc:", error);
+                audio.play().catch(error => {
+                    console.error('Lỗi phát nhạc:', error);
+                });
+                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Kiểm tra nếu âm thanh bị tắt bởi trình duyệt
+        audio.addEventListener('play', () => {
+            if (audio.muted) {
+                alert('Trình duyệt của bạn đã chặn âm thanh tự động. Vui lòng nhấp vào biểu tượng loa trên tab để bật âm thanh.');
+            }
+        });
+    </script>
+</body>
+</html>
