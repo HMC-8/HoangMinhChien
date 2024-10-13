@@ -18,14 +18,17 @@
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.9); /* Nền trắng nhạt */
-            padding: 40px;
-            border-radius: 10px; /* Bo tròn góc */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho container */
             position: relative;
             top: 50%;
             transform: translateY(-50%); /* Căn giữa theo chiều dọc */
             text-align: center; /* Căn giữa tất cả văn bản */
+        }
+
+        .bio-section {
+            background: rgba(255, 255, 255, 0.9); /* Nền trắng nhạt */
+            padding: 40px;
+            border-radius: 10px; /* Bo tròn góc */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho container */
         }
 
         header {
@@ -102,27 +105,29 @@
 <body>
     <!-- Thêm thẻ audio với link nhạc -->
     <audio id="background-music" autoplay loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
-        <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
-        </header>
-        <nav>
-            <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
-                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
-            </ul>
-            <!-- Nút tắt/mở nhạc -->
-            <button class="toggle-music" id="music-toggle">Tắt nhạc "Tuyệt nàng đi"</button>
-        </nav>
+        <div class="bio-section">
+            <header>
+                <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
+                <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+                <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                    <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                    <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                    <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                    <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
+                </ul>
+                <!-- Nút tắt/mở nhạc -->
+                <button class="toggle-music" id="music-toggle">Tắt nhạc "Tuyệt nàng đi"</button>
+            </nav>
+        </div>
         <footer>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
