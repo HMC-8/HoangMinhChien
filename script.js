@@ -5,6 +5,11 @@ window.addEventListener('load', () => {
     const audio = document.getElementById('background-music');
     let width = 0;
 
+    // Tự động bật nhạc khi tải trang
+    audio.play().catch(error => {
+        console.log('Nhạc không thể tự động phát: ', error);
+    });
+
     // Tạo một interval để cập nhật thanh tiến độ
     const loadingInterval = setInterval(() => {
         if (width >= 100) {
@@ -13,15 +18,6 @@ window.addEventListener('load', () => {
             setTimeout(() => {
                 loading.style.display = 'none'; // Ẩn phần tử loading sau khi hiệu ứng
             }, 500); // Thời gian chờ để hiệu ứng hoàn tất
-            
-            // Tự động bật nhạc khi tải xong
-            audio.play().catch(error => {
-                console.log('Nhạc không thể tự động phát: ', error);
-            });
         } else {
             width++;
-            progress.style.width = width + '%'; // Cập nhật độ rộng thanh chạy
-            percentage.innerText = width + '%'; // Cập nhật tỷ lệ phần trăm
-        }
-    }, 30); // Thay đổi thời gian để điều chỉnh tốc độ
-});
+            progress.style.width = width + '%'; // Cập
