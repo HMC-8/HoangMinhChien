@@ -140,23 +140,24 @@
         let isPlaying = false;
 
         toggleButton.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
-            } else {
-                audio.play().catch(error => {
+            if (!isPlaying) {
+                // Bắt đầu phát nhạc sau khi người dùng click
+                audio.play().then(() => {
+                    toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
+                }).catch(error => {
                     console.error('Lỗi phát nhạc:', error);
                 });
-                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
+            } else {
+                audio.pause();
+                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
             }
             isPlaying = !isPlaying;
         });
 
-        // Kiểm tra nếu âm thanh bị tắt bởi trình duyệt
-        audio.addEventListener('play', () => {
-            if (audio.muted) {
-                alert('Trình duyệt của bạn đã chặn âm thanh tự động. Vui lòng nhấp vào biểu tượng loa trên tab để bật âm thanh.');
-            }
+        // Xử lý sự kiện khi âm nhạc bị tắt
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
         });
     </script>
 </body>
