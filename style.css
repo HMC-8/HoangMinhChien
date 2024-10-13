@@ -4,12 +4,12 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 100px 0;
+    margin: 0;
 }
 
 h1 {
-    font-size: 2.3em; /* Giảm kích thước chữ từ 3em xuống 2.5em */
-}
-
-h1 {
-    font-size: 3em;
+    font-size: 2.5em; /* Giảm kích thước chữ */
+    white-space: nowrap; /* Ngăn tiêu đề xuống dòng */
+    margin: 0; /* Loại bỏ khoảng cách không cần thiết */
+    padding: 0;
 }
