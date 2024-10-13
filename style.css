@@ -20,6 +20,13 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.loading-text {
+    font-size: 24px;
+    color: green; /* Màu chữ cho phần text loading */
+    margin-bottom: 20px; /* Khoảng cách giữa text và thanh tiến độ */
 }
 
 .progress-container {
