@@ -3,118 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu về bản thân</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Giới thiệu bản thân</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
+            color: white;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
         }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin-bottom: 40px;
-        }
-        .profile img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-        .profile-info {
-            max-width: 600px;
-        }
-        .profile-info h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .profile-info p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        .skills {
-            margin-top: 40px;
-        }
-        .skills h3 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            padding: 100px 20px;
         }
-        .skills-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        h1 {
+            font-size: 60px;
+            color: #ffeb3b;
+            margin: 0;
         }
-        .skill {
+        p {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #ffffff;
+        }
+        .button {
+            margin-top: 30px;
+            padding: 15px 30px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
-            margin: 10px;
+            font-size: 20px;
+            border: none;
             border-radius: 5px;
-            font-size: 1.1rem;
+            cursor: pointer;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        footer p {
-            margin: 0;
-            font-size: 1rem;
+        .button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Giới thiệu về Hoàng Minh Chiến</h1>
-    </header>
-    <div class="container">
-        <section class="profile">
-            <img src="https://via.placeholder.com/200" alt="Ảnh đại diện">
-            <div class="profile-info">
-                <h2>Xin chào! Tôi là Hoàng Minh Chiến</h2>
-                <p>Tôi là một lập trình viên với đam mê phát triển web và công nghệ. Tôi thích học hỏi các ngôn ngữ lập trình mới và làm việc trên các dự án sáng tạo. Trong thời gian rảnh, tôi thường khám phá những xu hướng công nghệ mới nhất và tham gia các dự án mã nguồn mở.</p>
-            </div>
-        </section>
 
-        <section class="skills">
-            <h3>Kỹ Năng Của Tôi</h3>
-            <div class="skills-list">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">PHP</div>
-                <div class="skill">Python</div>
-                <div class="skill">Git</div>
-                <div class="skill">React</div>
-            </div>
-        </section>
+    <div class="container">
+        <h1>Hoàng Minh Chiến</h1>
+        <p>Chào mừng đến với thế giới của tôi!</p>
+        <button class="button">Liên hệ</button>
     </div>
-    
-    <footer>
-        <p>© 2024 Hoàng Minh Chiến - Tất cả quyền được bảo lưu.</p>
-    </footer>
+
 </body>
 </html>
