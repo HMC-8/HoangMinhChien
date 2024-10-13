@@ -50,12 +50,12 @@ header {
 }
 
 .profile-img {
-    width: 150px;
-    border-radius: 50%;
+    width: 150px; /* Chiều rộng ảnh đại diện */
+    border-radius: 50%; /* Cắt ảnh thành hình tròn */
 }
 
 nav {
-    margin: 20px 0;
+    margin: 20px 0; /* Khoảng cách trên và dưới nav */
 }
 
 nav ul {
@@ -68,17 +68,12 @@ nav li {
 }
 
 nav a {
-    text-decoration: none;
-    color: blue;
+    text-decoration: none; /* Bỏ gạch chân */
+    color: blue; /* Màu chữ */
     font-weight: bold; /* Đậm chữ cho các liên kết */
 }
 
 footer {
     margin-top: 20px; /* Khoảng cách phía trên footer */
     text-align: center; /* Canh giữa nội dung footer */
-}
-
-#music-controls {
-    text-align: center; /* Canh giữa nút tắt nhạc */
-    margin-top: 20px;
 }
