@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
+    background-image: url('https://via.placeholder.com/600'); /* Hình nền mẫu */
     background-size: cover; /* Phủ kín hình nền */
     background-position: center; /* Căn giữa hình nền */
     height: 100vh; /* Chiều cao toàn bộ viewport */
