@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('https://via.placeholder.com/600'); /* Hình nền mẫu */
+    background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
     background-size: cover; /* Phủ kín hình nền */
     background-position: center; /* Căn giữa hình nền */
     height: 100vh; /* Chiều cao toàn bộ viewport */
@@ -26,15 +26,9 @@ body {
     margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
 }
 
-h1 {
-    font-size: 5vw; /* Kích thước chữ lớn */
-    white-space: nowrap; /* Ngăn chữ xuống dòng */
-    background: linear-gradient(to right, white, black); /* Gradient từ trắng sang đen */
-    -webkit-background-clip: text; /* Cắt nền cho chữ */
-    -webkit-text-fill-color: transparent; /* Làm chữ trong suốt để hiện gradient */
+h1, p {
     margin: 10px 0;
-    overflow: hidden; /* Đảm bảo phần văn bản không bị tràn */
-    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu văn bản quá dài */
+    color: white; /* Màu chữ trắng cho tên */
 }
 
 nav {
@@ -72,4 +66,23 @@ footer {
     margin-top: 20px;
     font-size: 12px;
     color: #777;
+}
+
+.music-controls {
+    margin-top: 20px;
+}
+
+.music-controls button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.music-controls button:hover {
+    background-color: rgba(240, 240, 240, 0.9);
 }
