@@ -21,10 +21,6 @@ body {
     z-index: 1000;
 }
 
-.loading-content {
-    text-align: center;
-}
-
 .spinner {
     border: 10px solid rgba(255, 255, 255, 0.3); /* Màu viền bên ngoài */
     border-top: 10px solid #76FF03; /* Màu viền bên trên (xanh lá) */
