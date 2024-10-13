@@ -1,17 +1,20 @@
-window.addEventListener('load', () => {
-    const loading = document.getElementById('loading');
-    const audio = document.getElementById('background-music');
+// Lưu trữ trạng thái nhạc
+let musicPlaying = true;
 
-    // Tự động bật nhạc khi tải trang
-    audio.play().catch(error => {
-        console.log('Nhạc không thể tự động phát: ', error);
-    });
+// Hàm để tắt hoặc bật nhạc
+function toggleMusic() {
+    const music = document.getElementById('background-music');
+    const button = document.getElementById('toggle-music');
+    
+    if (musicPlaying) {
+        music.pause(); // Tắt nhạc
+        button.textContent = 'Bật Nhạc'; // Cập nhật văn bản nút
+    } else {
+        music.play(); // Bật nhạc
+        button.textContent = 'Tắt Nhạc'; // Cập nhật văn bản nút
+    }
+    musicPlaying = !musicPlaying; // Đảo ngược trạng thái nhạc
+}
 
-    // Giữ vòng xoay trong 3 giây trước khi chuyển vào trang
-    setTimeout(() => {
-        loading.style.opacity = '0'; // Đưa loading vào trạng thái trong suốt
-        setTimeout(() => {
-            loading.style.display = 'none'; // Ẩn phần tử loading sau khi hiệu ứng
-        }, 500); // Thời gian chờ để hiệu ứng hoàn tất
-    }, 3000); // Thời gian giữ vòng xoay (3 giây)
-});
+// Thêm sự kiện click cho nút
+document.getElementById('toggle-music').addEventListener('click', toggleMusic);
