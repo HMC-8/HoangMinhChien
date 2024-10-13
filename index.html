@@ -13,8 +13,7 @@
             background-size: cover; /* Phủ kín hình nền */
             background-position: center; /* Căn giữa hình nền */
             height: 100vh; /* Chiều cao toàn bộ viewport */
-            overflow: hidden; /* Ẩn cuộn */
-            position: relative; /* Để cho số di chuyển theo kích thước body */
+            overflow: hidden; /* Ẩn thanh cuộn */
         }
 
         .container {
@@ -27,19 +26,19 @@
             transform: translateY(-50%); /* Căn giữa theo chiều dọc */
         }
 
-        .profile-img-wrapper {
-            position: relative;
-            display: inline-block; /* Để áp dụng viền xung quanh */
-            border-radius: 50%; /* Bo tròn viền */
-            overflow: hidden; /* Để ảnh không ra ngoài viền */
-            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.8), 0 0 0 15px rgba(0, 0, 0, 0.3); /* Hiệu ứng kính */
-        }
-
         .profile-img {
             width: 100px; /* Đặt chiều rộng cho ảnh */
             height: 100px; /* Đặt chiều cao cho ảnh */
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+            margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
+            border: 5px solid transparent; /* Viền ban đầu */
+            animation: border-animation 5s infinite alternate; /* Hiệu ứng viền */
+        }
+
+        @keyframes border-animation {
+            0% { border-color: white; }
+            100% { border-color: black; }
         }
 
         h1, p {
@@ -84,40 +83,50 @@
             color: #777;
         }
 
-        .falling-numbers {
-            position: absolute;
-            white-space: nowrap; /* Không cho phép xuống dòng */
-            pointer-events: none; /* Không cho phép tương tác */
-            color: lime; /* Màu số */
-            font-size: 20px; /* Kích thước số */
+        .music-controls {
+            margin-top: 20px;
         }
 
-        .number {
+        .music-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .music-controls button:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+        }
+
+        /* CSS cho các ký tự 1 và 0 */
+        .falling-ones-zeros {
             position: absolute;
-            animation: fall linear infinite; /* Hiệu ứng rơi */
+            white-space: nowrap;
+            font-size: 20px; /* Kích thước chữ */
+            color: lime; /* Màu xanh lá */
+            opacity: 0.7;
+            animation: fall 5s linear infinite; /* Hiệu ứng rơi */
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(-100vh); /* Bắt đầu từ trên cùng */
-            }
-            100% {
-                transform: translateY(100vh); /* Kết thúc ở dưới cùng */
-            }
+            0% { top: -10%; }
+            100% { top: 100%; }
         }
     </style>
 </head>
 <body>
     <audio id="background-music" loop>
-        <source src="https://github.com/HMC-8/HoangMinhChien/blob/cf38fd5d03cb3692c69ae22f9cc96040e27c66dc/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%Ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/2e4d0e3a0ada1b97a48cb05cc0dc89a68f41a4f8/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
-            <div class="profile-img-wrapper"> <!-- Thêm viền kính cho ảnh đại diện -->
-                <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            </div>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1> <!-- Tên đã chỉnh sửa -->
             <p>Xin chào, đây là thông tin của tôi!</p> <!-- Nội dung đã được sửa -->
         </header>
@@ -131,51 +140,39 @@
             </ul>
         </nav>
 
+        <div class="music-controls">
+            <button id="toggle-music-button">Bật/Tắt nhạc "Tuyệt nàng đi"</button>
+        </div>
+
         <footer>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
     </div>
 
-    <div class="falling-numbers" id="fallingNumbers"></div>
+    <!-- Các ký tự 1 và 0 -->
+    <div class="falling-ones-zeros" style="left: 10%;">1</div>
+    <div class="falling-ones-zeros" style="left: 20%;">0</div>
+    <div class="falling-ones-zeros" style="left: 30%;">1</div>
+    <div class="falling-ones-zeros" style="left: 40%;">0</div>
+    <div class="falling-ones-zeros" style="left: 50%;">1</div>
+    <div class="falling-ones-zeros" style="left: 60%;">0</div>
+    <div class="falling-ones-zeros" style="left: 70%;">1</div>
+    <div class="falling-ones-zeros" style="left: 80%;">0</div>
 
     <script>
-        const fallingNumbersContainer = document.getElementById('fallingNumbers');
-
-        function createFallingNumber() {
-            const numberElement = document.createElement('div');
-            numberElement.classList.add('number');
-
-            // Chọn số ngẫu nhiên giữa 1 và 0
-            numberElement.textContent = Math.random() < 0.5 ? '1' : '0';
-
-            // Đặt vị trí ngẫu nhiên cho số
-            const randomX = Math.random() * window.innerWidth;
-            const randomDelay = Math.random() * 5; // Độ trễ ngẫu nhiên
-            const randomSpeed = Math.random() * 3 + 1; // Tốc độ ngẫu nhiên từ 1s đến 4s
-
-            numberElement.style.left = `${randomX}px`;
-            numberElement.style.animationDuration = `${randomSpeed}s`; // Thay đổi thời gian rơi ngẫu nhiên
-
-            fallingNumbersContainer.appendChild(numberElement);
-
-            // Xóa phần tử sau khi rơi hoàn toàn
-            setTimeout(() => {
-                numberElement.remove();
-            }, randomSpeed * 1000); // Thời gian tồn tại của số trên màn hình
-        }
-
-        // Tạo số liên tục
-        setInterval(createFallingNumber, 300); // Mỗi 300ms sẽ tạo một số
-
         const audio = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-music-button');
+        let isPlaying = false;
 
-        // Bật/Tắt nhạc
-        document.getElementById('toggle-music-button').addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            } else {
+        toggleButton.addEventListener('click', () => {
+            if (isPlaying) {
                 audio.pause();
+                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
+            } else {
+                audio.play();
+                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
             }
+            isPlaying = !isPlaying;
         });
     </script>
 </body>
