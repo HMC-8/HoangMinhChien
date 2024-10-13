@@ -50,12 +50,12 @@ header {
 }
 
 .profile-img {
-    width: 150px;
-    border-radius: 50%;
+    width: 150px; /* Chiều rộng ảnh đại diện */
+    border-radius: 50%; /* Cắt ảnh thành hình tròn */
 }
 
 nav {
-    margin: 20px 0;
+    margin: 20px 0; /* Khoảng cách trên và dưới nav */
 }
 
 nav ul {
@@ -68,8 +68,8 @@ nav li {
 }
 
 nav a {
-    text-decoration: none;
-    color: blue;
+    text-decoration: none; /* Bỏ gạch chân */
+    color: blue; /* Màu chữ */
     font-weight: bold; /* Đậm chữ cho các liên kết */
 }
 
