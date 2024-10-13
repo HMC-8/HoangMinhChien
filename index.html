@@ -64,19 +64,15 @@
         }
 
         .moving-text {
-            font-size: 32px; /* Kích thước chữ cho tên và thông điệp */
+            font-size: 32px; /* Kích thước chữ cho tên */
             margin: 10px 0;
-            display: inline-block; /* Để áp dụng animation */
-            animation: colorChange 4s linear infinite; /* Thay đổi màu chữ */
+            color: white; /* Màu chữ trắng sáng */
         }
 
-        @keyframes colorChange {
-            0% {
-                color: white; /* Màu bắt đầu */
-            }
-            100% {
-                color: black; /* Quay lại màu cuối cùng */
-            }
+        .greeting-text {
+            font-size: 24px; /* Kích thước chữ cho thông điệp */
+            margin: 10px 0;
+            color: white; /* Màu chữ trắng sáng */
         }
 
         nav {
@@ -150,7 +146,7 @@
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1 class="moving-text">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p class="moving-text">Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung -->
+            <p class="greeting-text">Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung -->
             <div class="song-title">Bài hát: Tuyệt Nàng Đi</div> <!-- Tên bài hát -->
         </header>
         <nav>
@@ -180,4 +176,8 @@
                 audio.play();
                 toggleButton.textContent = 'Tắt nhạc Tuyệt Nàng Đi';
             } else {
-                audio
+                audio.pause();
+                toggleButton.textContent = 'Bật nhạc Tuyệt Nàng Đi';
+            }
+        }
+    </script
