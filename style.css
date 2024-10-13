@@ -1,6 +1,10 @@
-h1 {
-    font-size: 2em; /* Giảm kích thước chữ */
-    white-space: nowrap; /* Ngăn chữ xuống dòng */
+body {
+    background: linear-gradient(to bottom, white, black);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 100px 0;
     margin: 0;
-    padding: 0;
+    width: 100vw; /* Đảm bảo body chiếm toàn bộ chiều rộng màn hình */
+    overflow-x: hidden; /* Tránh xuất hiện thanh cuộn ngang */
 }
