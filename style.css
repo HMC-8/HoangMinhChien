@@ -27,12 +27,13 @@ body {
 }
 
 h1 {
-    font-size: 5vw; /* Kích thước chữ dựa trên chiều rộng màn hình */
-    white-space: nowrap; /* Ngăn tiêu đề xuống dòng */
+    font-size: 5vw; /* Kích thước chữ lớn hơn dựa trên chiều rộng màn hình */
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
     color: white; /* Màu chữ */
     margin: 10px 0;
+    overflow: hidden; /* Đảm bảo phần văn bản không bị tràn */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu văn bản quá dài */
 }
-
 nav {
     margin-top: 20px;
 }
