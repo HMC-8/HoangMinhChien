@@ -5,6 +5,7 @@ window.addEventListener('load', () => {
     const audio = document.getElementById('background-music');
     let width = 0;
 
+    // Tạo một interval để cập nhật thanh tiến độ
     const loadingInterval = setInterval(() => {
         if (width >= 100) {
             clearInterval(loadingInterval); // Dừng khi đạt 100%
