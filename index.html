@@ -46,21 +46,18 @@
             font-size: 32px; /* Kích thước chữ cho tên và thông điệp */
             margin: 10px 0;
             display: inline-block; /* Để áp dụng animation */
-            animation: diagonal-slide 4s linear infinite; /* Thêm hiệu ứng di chuyển chéo */
-            background: linear-gradient(white, black);
-            -webkit-background-clip: text; /* Chỉ clip nền cho văn bản */
-            color: transparent; /* Đặt màu chữ trong suốt */
+            animation: colorChange 4s linear infinite; /* Thay đổi màu chữ */
         }
 
-        @keyframes diagonal-slide {
+        @keyframes colorChange {
             0% {
-                transform: translateX(-100%); /* Bắt đầu từ bên trái */
+                color: white; /* Màu bắt đầu */
             }
             50% {
-                transform: translateX(100%); /* Đến bên phải */
+                color: black; /* Màu giữa */
             }
             100% {
-                transform: translateX(-100%); /* Quay về bên trái */
+                color: white; /* Quay lại màu ban đầu */
             }
         }
 
