@@ -94,12 +94,28 @@
             font-size: 12px;
             color: #777;
         }
+
+        /* Nút bật/tắt nhạc */
+        .toggle-music {
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền cho nút */
+            border: 2px solid white; /* Viền nút */
+            border-radius: 30px; /* Bo tròn góc */
+            padding: 10px 20px; /* Khoảng cách bên trong */
+            cursor: pointer; /* Hiển thị con trỏ khi di chuột qua nút */
+            font-weight: bold; /* Chữ đậm */
+            margin-top: 20px; /* Khoảng cách phía trên nút */
+            transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+        }
+
+        .toggle-music:hover {
+            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
+        }
     </style>
 </head>
 <body>
     <!-- Thêm thẻ audio -->
     <audio id="background-audio" autoplay loop>
-        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
+        <source src="https://github.com/HMC-8/HoangMinhChien/raw/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -118,9 +134,28 @@
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
+
+        <!-- Nút bật/tắt nhạc -->
+        <button class="toggle-music" onclick="toggleMusic()">Tắt Nhạc</button>
+
         <footer>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        const audio = document.getElementById('background-audio');
+        const toggleButton = document.querySelector('.toggle-music');
+        
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                toggleButton.textContent = 'Tắt Nhạc'; // Đổi nội dung nút khi nhạc đang phát
+            } else {
+                audio.pause();
+                toggleButton.textContent = 'Bật Nhạc'; // Đổi nội dung nút khi nhạc đã dừng
+            }
+        }
+    </script>
 </body>
 </html>
