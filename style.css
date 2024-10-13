@@ -14,19 +14,30 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
 }
 
 .loading-text {
-    font-size: 24px;
-    color: green; /* Màu chữ cho phần text loading */
+    font-size: 40px; /* Tăng kích thước chữ */
+    color: transparent; /* Chữ trong suốt */
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet); /* Gradient màu cầu vồng */
+    -webkit-background-clip: text; /* Cắt nền cho chữ */
+    background-clip: text;
+    animation: rainbow 1s linear infinite; /* Hiệu ứng cầu vồng chớp */
     margin-bottom: 20px; /* Khoảng cách giữa text và thanh tiến độ */
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
 }
 
 .progress-container {
@@ -34,19 +45,29 @@ body {
     background: #e0e0e0;
     border-radius: 20px;
     overflow: hidden;
-    margin: 20px 0;
+    position: relative;
 }
 
 .progress {
-    height: 20px;
+    height: 30px; /* Tăng chiều cao thanh */
     width: 0;
-    background: green; /* Màu xanh lá */
-    transition: width 0.3s; /* Thêm hiệu ứng chuyển động */
+    background: linear-gradient(90deg, #00FF00, #0000FF, #FF00FF); /* Gradient màu sắc */
+    animation: loading 3s ease-in-out infinite; /* Hiệu ứng tải màu chớp */
+}
+
+@keyframes loading {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
 }
 
 #percentage {
-    font-size: 20px;
+    font-size: 24px; /* Tăng kích thước chữ phần trăm */
     color: green; /* Màu chữ của phần trăm */
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa phần trăm */
 }
 
 .container {
