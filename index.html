@@ -77,9 +77,6 @@
 
         .music-controls {
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .music-controls button {
@@ -90,7 +87,6 @@
             color: black;
             font-weight: bold;
             cursor: pointer;
-            margin: 5px;
             transition: background-color 0.3s;
         }
 
@@ -123,8 +119,7 @@
         </nav>
 
         <div class="music-controls">
-            <button id="play-button">Bật nhạc "Tuyệt nàng đi"</button>
-            <button id="pause-button">Tắt nhạc "Tuyệt nàng đi"</button>
+            <button id="toggle-music-button">Bật/Tắt nhạc "Tuyệt nàng đi"</button>
         </div>
 
         <footer>
@@ -134,15 +129,18 @@
 
     <script>
         const audio = document.getElementById('background-music');
-        const playButton = document.getElementById('play-button');
-        const pauseButton = document.getElementById('pause-button');
+        const toggleButton = document.getElementById('toggle-music-button');
+        let isPlaying = false;
 
-        playButton.addEventListener('click', () => {
-            audio.play();
-        });
-
-        pauseButton.addEventListener('click', () => {
-            audio.pause();
+        toggleButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
+            } else {
+                audio.play();
+                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
+            }
+            isPlaying = !isPlaying;
         });
     </script>
 </body>
