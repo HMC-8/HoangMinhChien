@@ -101,6 +101,17 @@
         .music-controls button:hover {
             background-color: rgba(240, 240, 240, 0.9);
         }
+
+        /* Hiệu ứng đổi màu cho tên */
+        .name {
+            animation: color-change 5s infinite alternate;
+        }
+
+        @keyframes color-change {
+            0% { color: white; }
+            50% { color: gray; }
+            100% { color: black; }
+        }
     </style>
 </head>
 <body>
@@ -112,7 +123,7 @@
     <div class="container">
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
         <nav>
@@ -141,7 +152,6 @@
 
         toggleButton.addEventListener('click', () => {
             if (!isPlaying) {
-                // Bắt đầu phát nhạc sau khi người dùng click
                 audio.play().then(() => {
                     toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
                 }).catch(error => {
@@ -154,7 +164,6 @@
             isPlaying = !isPlaying;
         });
 
-        // Xử lý sự kiện khi âm nhạc bị tắt
         audio.addEventListener('pause', () => {
             isPlaying = false;
             toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
