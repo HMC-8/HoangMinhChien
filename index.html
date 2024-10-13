@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoàng Minh Chiến's Bio</title>
+    <title>Thông tin Hoàng Minh Chiến</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,12 +18,11 @@
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 20px; /* Giảm khoảng cách padding */
+            padding: 20px;
             text-align: center; /* Căn giữa tất cả văn bản */
-        }
-
-        header {
-            margin-bottom: 20px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
         }
 
         .profile-img {
@@ -32,48 +31,50 @@
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
             margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
-            border: 4px solid transparent; /* Viền tròn không màu cho ảnh */
-            animation: rotate 10s linear infinite; /* Xoay quanh ảnh */
+            border: 4px solid transparent; /* Viền mặc định trong suốt */
+            background-image: linear-gradient(white, black); /* Viền màu trắng đen */
+            padding: 4px; /* Đệm để viền được nhìn thấy */
         }
 
-        @keyframes rotate {
-            0% { border-color: white; }
-            50% { border-color: black; }
-            100% { border-color: white; }
-        }
-
-        h1 {
-            font-size: 32px;
+        h1, p {
             margin: 10px 0;
-            color: #FFFFFF; /* Màu chữ trắng */
-            background: linear-gradient(90deg, #FFFFFF, #000000); /* Gradient trắng sang đen */
-            -webkit-background-clip: text; /* Cắt nền theo chữ */
-            -webkit-text-fill-color: transparent; /* Làm chữ trong suốt */
-            animation: gradient 5s ease infinite; /* Hiệu ứng di chuyển */
+            animation: colorChange 3s linear infinite; /* Hiệu ứng đổi màu chậm */
         }
 
-        @keyframes gradient {
-            0% { background-position: 0%; }
-            100% { background-position: 100%; }
+        @keyframes colorChange {
+            0% { color: white; }
+            50% { color: black; }
+            100% { color: white; }
         }
 
-        p {
-            color: #FFFFFF; /* Màu chữ trắng */
+        nav {
+            margin-top: 20px;
         }
 
-        .button {
+        nav ul {
+            list-style: none; /* Bỏ dấu đầu dòng */
+            padding: 0; /* Bỏ khoảng cách padding */
+        }
+
+        nav ul li {
+            margin: 15px 0; /* Khoảng cách giữa các liên kết */
+        }
+
+        nav ul li a {
+            display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
+            text-decoration: none; /* Bỏ gạch chân */
+            color: black; /* Màu chữ */
             background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
-            color: black; /* Màu chữ đen */
-            padding: 10px 20px; /* Khoảng cách bên trong */
+            padding: 15px 25px; /* Khoảng cách bên trong */
             border-radius: 30px; /* Bo tròn góc */
-            border: 2px solid white; /* Viền trắng */
-            cursor: pointer; /* Con trỏ chuột dạng tay */
-            margin: 5px; /* Khoảng cách giữa các nút */
-            transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+            border: 2px solid white; /* Viền trắng đậm */
+            font-weight: bold; /* Chữ đậm */
+            transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
         }
 
-        .button:hover {
+        nav ul li a:hover {
             background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
         }
 
         footer {
@@ -86,7 +87,7 @@
 </head>
 <body>
     <!-- Thêm thẻ audio -->
-    <audio id="music" loop>
+    <audio id="background-music" loop>
         <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -97,10 +98,6 @@
             <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
         </header>
-        <nav>
-            <button class="button" id="playButton" onclick="toggleMusic()">Bật nhạc "Tuyệt nàng đi"</button>
-            <button class="button" id="stopButton" onclick="toggleMusic()" style="display: none;">Tắt nhạc "Tuyệt nàng đi"</button>
-        </nav>
         <nav>
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
@@ -116,19 +113,18 @@
     </div>
 
     <script>
-        const music = document.getElementById('music');
-        const playButton = document.getElementById('playButton');
-        const stopButton = document.getElementById('stopButton');
+        const music = document.getElementById("background-music");
+        let isPlaying = true;
 
         function toggleMusic() {
-            if (music.paused) {
-                music.play();
-                playButton.style.display = 'none';
-                stopButton.style.display = 'inline-block';
-            } else {
+            if (isPlaying) {
                 music.pause();
-                playButton.style.display = 'inline-block';
-                stopButton.style.display = 'none';
+                isPlaying = false;
+                document.getElementById("toggle-button").innerText = "Bật nhạc \"Tuyệt nàng đi\"";
+            } else {
+                music.play();
+                isPlaying = true;
+                document.getElementById("toggle-button").innerText = "Tắt nhạc \"Tuyệt nàng đi\"";
             }
         }
     </script>
