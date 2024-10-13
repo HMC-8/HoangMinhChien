@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin Hoàng Minh Chiến</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Thêm Font Awesome -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +13,7 @@
             background-size: cover; /* Phủ kín hình nền */
             background-position: center; /* Căn giữa hình nền */
             height: 100vh; /* Chiều cao toàn bộ viewport */
-            overflow: hidden; /* Ẩn thanh cuộn */
+            overflow: hidden; /* Ẩn cuộn */
         }
 
         .container {
@@ -27,35 +26,14 @@
             transform: translateY(-50%); /* Căn giữa theo chiều dọc */
         }
 
-        .avatar-wrapper {
-            position: relative; /* Để có thể căn chỉnh viền */
-            display: inline-block; /* Căn giữa avatar và viền */
-            border-radius: 50%; /* Để viền có hình tròn */
-            overflow: hidden; /* Ẩn phần thừa ra ngoài */
-            width: 120px; /* Kích thước bao quanh */
-            height: 120px; /* Kích thước bao quanh */
-            animation: border-animation 3s infinite; /* Thêm hiệu ứng đổi màu */
-            border: 5px solid rgba(255, 255, 255, 0.8); /* Viền trắng mờ */
-        }
-
-        @keyframes border-animation {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); /* Bắt đầu với viền trắng */
-            }
-            50% {
-                box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.5); /* Viền trắng rõ ràng */
-            }
-            100% {
-                box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.5); /* Chuyển sang viền đen */
-            }
-        }
-
         .profile-img {
-            width: 100%; /* Đặt chiều rộng cho ảnh bằng với viền */
-            height: 100%; /* Đặt chiều cao cho ảnh bằng với viền */
+            width: 100px; /* Đặt chiều rộng cho ảnh */
+            height: 100px; /* Đặt chiều cao cho ảnh */
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
             margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
+            border: 2px solid white; /* Viền trắng */
+            padding: 4px; /* Khoảng cách giữa viền và ảnh */
         }
 
         h1, p {
@@ -93,71 +71,105 @@
             transform: scale(1.05); /* Tăng kích thước khi hover */
         }
 
-        /* Hiệu ứng chữ "1 0" */
-        .effect-container {
-            position: absolute;
-            top: -100px; /* Bắt đầu từ trên cùng */
-            left: 50%;
-            transform: translateX(-50%); /* Căn giữa theo chiều ngang */
-            white-space: nowrap; /* Đảm bảo không có ngắt dòng */
-            overflow: hidden; /* Ẩn phần vượt ra ngoài */
-            animation: fall 5s linear infinite; /* Thêm hiệu ứng rơi */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
         }
 
-        .effect-text {
-            color: green; /* Màu xanh lá cây */
-            font-size: 20px; /* Kích thước chữ nhỏ hơn */
+        .music-controls {
+            margin-top: 20px;
+        }
+
+        .music-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .music-controls button:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+        }
+
+        .falling-numbers {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap; /* Không cho phép xuống dòng */
+            pointer-events: none; /* Không cho phép tương tác */
+            font-size: 20px; /* Kích thước số */
+            color: lime; /* Màu số */
+            animation: fall 10s linear infinite; /* Hiệu ứng rơi */
         }
 
         @keyframes fall {
             0% {
-                top: -50px; /* Bắt đầu bên ngoài bên trên */
+                transform: translateX(-50%) translateY(-100%); /* Bắt đầu từ trên cùng */
             }
             100% {
-                top: 100vh; /* Kết thúc bên ngoài bên dưới */
+                transform: translateX(-50%) translateY(100vh); /* Kết thúc ở dưới cùng */
             }
-        }
-
-        /* Tạo nhiều dòng */
-        .line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%); /* Căn giữa theo chiều ngang */
-            color: green; /* Màu xanh lá cây */
-            font-size: 20px; /* Kích thước chữ nhỏ */
-            white-space: nowrap; /* Đảm bảo không có ngắt dòng */
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="https://www.soundjay.com/button/sounds/button-16.mp3" type="audio/mpeg"> <!-- Thay đổi đường dẫn tệp âm thanh tại đây -->
+    <!-- Thêm thẻ audio -->
+    <audio id="background-music" loop>
+        <source src="https://github.com/HMC-8/HoangMinhChien/blob/cf38fd5d03cb3692c69ae22f9cc96040e27c66dc/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
-            <div class="avatar-wrapper"> <!-- Bao quanh ảnh đại diện -->
-                <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            </div>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1> <!-- Tên đã chỉnh sửa -->
             <p>Xin chào, đây là thông tin của tôi!</p> <!-- Nội dung đã được sửa -->
         </header>
         <nav>
             <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL"><i class="fab fa-facebook-square"></i> Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8"><i class="fab fa-telegram"></i> Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185"><img src="https://i.pinimg.com/736x/82/53/22/82532235b1c99e391706a9c6e396aeaa.jpg" alt="Zalo" style="width:20px; height:20px; vertical-align: middle;"> Zalo</a></li>
-                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW"><i class="fab fa-youtube"></i> YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
+
+        <div class="music-controls">
+            <button id="toggle-music-button">Bật/Tắt nhạc "Tuyệt nàng đi"</button>
+        </div>
+
+        <footer>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- Tạo nhiều dòng số 1 và 0 -->
-    <div class="effect-container">
-        <div class="line" style="animation: fall 10s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-        <div class="line" style="top: 50px; animation: fall 12s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-        <div class="line" style="top: 100px; animation: fall 8s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-        <div class="line" style="top: 150px; animation: fall 11s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
-        <div class="line" style="top: 200px; animation: fall 9s linear infinite;">
+    <div class="falling-numbers">
+        <div>1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0</div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-music-button');
+        let isPlaying = false;
+
+        toggleButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
+            } else {
+                audio.play();
+                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
