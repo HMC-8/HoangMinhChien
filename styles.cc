@@ -1,7 +1,7 @@
 .container {
     max-width: 600px;
     margin: auto;
-    background: transparent; /* Thay đổi nền sang trong suốt */
+    background: transparent; /* Nền trong suốt */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -15,7 +15,7 @@ nav ul li a {
     display: inline-block;
     text-decoration: none;
     color: black; /* Màu chữ đen */
-    background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
+    background-color: transparent; /* Xóa màu nền, để trong suốt */
     padding: 15px 25px;
     border-radius: 30px;
     font-weight: bold;
