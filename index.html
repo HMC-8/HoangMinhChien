@@ -35,11 +35,35 @@
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
             margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
+            border: 5px solid; /* Viền xung quanh ảnh */
+            border-image: linear-gradient(45deg, white, black) 1; /* Viền xen kẽ trắng đen */
         }
 
         h1 {
             font-size: 32px;
             margin: 10px 0;
+            background: linear-gradient(to right, #ff0080, #ff8c00); /* Hiệu ứng chuyển màu */
+            -webkit-background-clip: text; /* Cắt nền theo văn bản */
+            -webkit-text-fill-color: transparent; /* Đổ màu nền vào văn bản */
+            animation: flashing 1s linear infinite; /* Thêm hiệu ứng nháy */
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            animation: flashing 1s linear infinite; /* Thêm hiệu ứng nháy */
+        }
+
+        @keyframes flashing {
+            0% {
+                color: white; /* Màu trắng */
+            }
+            50% {
+                color: black; /* Màu đen */
+            }
+            100% {
+                color: white; /* Màu trắng */
+            }
         }
 
         nav {
@@ -82,7 +106,6 @@
         /* CSS cho nút bật tắt nhạc */
         .music-toggle {
             margin-top: 20px;
-            display: inline-block;
             padding: 10px 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border: none;
@@ -90,6 +113,11 @@
             cursor: pointer;
             font-weight: bold;
             color: black;
+            transition: background-color 0.3s;
+        }
+
+        .music-toggle:hover {
+            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
         }
     </style>
 </head>
@@ -103,8 +131,8 @@
     <div class="container">
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p>
+            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊ệ𝒏</h1>
+            <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
         </header>
         <nav>
             <ul>
@@ -115,20 +143,20 @@
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
-        <button class="music-toggle" onclick="toggleMusic()">Tắt/Bật Nhạc: Tuyệt Nàng Đi</button>
         <footer>
+            <button class="music-toggle" onclick="toggleMusic()">Tắt/Bật nhạc "Tuyệt nàng đi"</button>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        const audio = document.getElementById('background-music');
-
+        // JavaScript để bật/tắt nhạc
+        const music = document.getElementById('background-music');
         function toggleMusic() {
-            if (audio.paused) {
-                audio.play();
+            if (music.paused) {
+                music.play();
             } else {
-                audio.pause();
+                music.pause();
             }
         }
     </script>
