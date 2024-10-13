@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin Hoàng Minh Chiến</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Thêm Font Awesome -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +14,7 @@
             background-size: cover; /* Phủ kín hình nền */
             background-position: center; /* Căn giữa hình nền */
             height: 100vh; /* Chiều cao toàn bộ viewport */
+            overflow: hidden; /* Ẩn thanh cuộn */
         }
 
         .container {
@@ -93,6 +95,23 @@
         .music-controls button:hover {
             background-color: rgba(240, 240, 240, 0.9);
         }
+
+        .number {
+            position: absolute;
+            font-size: 50px; /* Kích thước chữ số */
+            color: green; /* Màu xanh lá */
+            white-space: nowrap; /* Không xuống dòng */
+            animation: move 5s linear infinite; /* Hiệu ứng chuyển động */
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(100vw);
+            }
+            100% {
+                transform: translateX(-100vw);
+            }
+        }
     </style>
 </head>
 <body>
@@ -110,38 +129,13 @@
         </header>
         <nav>
             <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
-                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8"><i class="fab fa-telegram"></i> Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185"><i class="fab fa-zalo"></i> Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW"><i class="fab fa-youtube"></i> YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><i class="fab fa-tiktok"></i> TikTok</a></li>
             </ul>
         </nav>
 
         <div class="music-controls">
-            <button id="toggle-music-button">Bật/Tắt nhạc "Tuyệt nàng đi"</button>
-        </div>
-
-        <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        const audio = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = false;
-
-        toggleButton.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
-            } else {
-                audio.play();
-                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
-</body>
-</html>
+            <button id="toggle-music-button">B
