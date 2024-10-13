@@ -6,35 +6,39 @@
     <link rel="stylesheet" href="style.css">
     <title>Giới thiệu - Hoàng Minh Chiến</title>
     <style>
-        .color-moving {
-            background: linear-gradient(90deg, white, red);
-            background-size: 200% 100%;
-            animation: move 5s linear infinite; 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            font-size: 40px; 
+        @keyframes color-blink {
+            0% { color: white; }
+            25% { color: red; }
+            50% { color: yellow; }
+            75% { color: blue; }
+            100% { color: white; }
         }
 
-        @keyframes move {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://pixewall.com/wp-content/uploads/2024/07/4k-Anime-Wallpaper-576x1024.jpeg') no-repeat center center fixed; 
+            background-size: cover; 
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .color-blinking {
+            animation: color-blink 3s infinite; /* Thay đổi tốc độ tại đây */
+            font-size: 40px; /* Kích thước chữ */
         }
     </style>
 </head>
 <body>
     <header>
         <div class="info-bubble">
-            <h1 class="name color-moving">Hoàng Minh Chiến</h1>
-            <p>Tên tôi là Hoàng Minh Chiến. Tôi đam mê lập trình và phát triển bản thân.</p>
-            <p>Link bio: <a href="https://github.com/HMC-8/HoangMinhChien" target="_blank">Hoàng Minh Chiến</a></p>
+            <h1 class="name color-blinking">Hoàng Minh Chiến</h1>
+            <p class="color-blinking">Tên tôi là Hoàng Minh Chiến. Tôi đam mê lập trình và phát triển bản thân.</p>
+            <p class="color-blinking">Link bio: <a href="https://github.com/HMC-8/HoangMinhChien" target="_blank">Hoàng Minh Chiến</a></p>
         </div>
     </header>
     <footer>
-        <p class="footer-text color-moving">&copy; 2024 Hoàng Minh Chiến</p>
+        <p class="footer-text color-blinking">&copy; 2024 Hoàng Minh Chiến</p>
     </footer>
 </body>
 </html>
