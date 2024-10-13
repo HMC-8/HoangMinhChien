@@ -25,10 +25,10 @@
         }
 
         .bio-section {
-            background: rgba(255, 255, 255, 0.2); /* Nền trắng siêu nhạt */
-            padding: 20px; /* Padding nhỏ hơn */
+            background: rgba(255, 255, 255, 0.1); /* Nền trắng siêu nhạt */
+            padding: 10px; /* Padding nhỏ hơn */
             border-radius: 10px; /* Bo tròn góc */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Đổ bóng cho container */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Đổ bóng cho container */
             margin-bottom: 20px; /* Khoảng cách dưới phần trắng */
         }
 
@@ -126,27 +126,22 @@
                 <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
-            <button class="toggle-music">Dừng Nhạc: Tuyệt Nàng Đi</button>
         </nav>
+        <button class="toggle-music" onclick="toggleMusic()">Tắt/Bật nhạc: Tuyệt Nàng Đi</button> <!-- Nút bật/tắt nhạc -->
         <footer>
-            <p>&copy; 2024 Hoàng Minh Chiến</p>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        // JavaScript để tắt/mở nhạc
-        const musicButton = document.querySelector('.toggle-music');
-        const audio = document.querySelector('#music');
-
-        musicButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                musicButton.textContent = 'Dừng Nhạc: Tuyệt Nàng Đi';
+        function toggleMusic() {
+            const music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
             } else {
-                audio.pause();
-                musicButton.textContent = 'Bật Nhạc: Tuyệt Nàng Đi';
+                music.pause();
             }
-        });
+        }
     </script>
 </body>
 </html>
