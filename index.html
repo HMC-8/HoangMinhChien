@@ -26,7 +26,7 @@
 
         .bio-section {
             background: rgba(255, 255, 255, 0.2); /* Nền trắng siêu nhạt */
-            padding: 10px; /* Padding nhỏ hơn */
+            padding: 20px; /* Padding nhỏ hơn */
             border-radius: 10px; /* Bo tròn góc */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Đổ bóng cho container */
             margin-bottom: 20px; /* Khoảng cách dưới phần trắng */
@@ -63,4 +63,90 @@
         }
 
         nav ul li a {
-            display: inline-block
+            display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
+            text-decoration: none; /* Bỏ gạch chân */
+            color: black; /* Màu chữ đen */
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
+            padding: 10px 20px; /* Padding cho các liên kết */
+            border-radius: 30px; /* Bo tròn góc */
+            border: 2px solid white; /* Viền trắng đậm */
+            font-weight: bold; /* Chữ đậm */
+            transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
+            transform: scale(1.05); /* Tăng kích thước khi hover */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* Nút tắt/mở nhạc */
+        .toggle-music {
+            margin-top: 20px; /* Khoảng cách trên nút */
+            padding: 10px 20px; /* Padding cho nút */
+            border: none; /* Bỏ viền */
+            background-color: rgba(255, 255, 255, 0.8); /* Nền trắng nhạt */
+            border-radius: 30px; /* Bo tròn góc */
+            cursor: pointer; /* Hiệu ứng con trỏ khi hover */
+            font-weight: bold; /* Chữ đậm */
+            transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+        }
+
+        .toggle-music:hover {
+            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Thêm thẻ audio -->
+    <audio id="music" autoplay loop>
+        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <div class="bio-section">
+            <header>
+                <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
+                <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+                <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p>
+            </header>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
+            </ul>
+            <button class="toggle-music">Dừng Nhạc: Tuyệt Nàng Đi</button>
+        </nav>
+        <footer>
+            <p>&copy; 2024 Hoàng Minh Chiến</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript để tắt/mở nhạc
+        const musicButton = document.querySelector('.toggle-music');
+        const audio = document.querySelector('#music');
+
+        musicButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                musicButton.textContent = 'Dừng Nhạc: Tuyệt Nàng Đi';
+            } else {
+                audio.pause();
+                musicButton.textContent = 'Bật Nhạc: Tuyệt Nàng Đi';
+            }
+        });
+    </script>
+</body>
+</html>
