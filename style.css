@@ -16,7 +16,6 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 9999; /* Đảm bảo loading ở trên cùng */
-    animation: fade 1s infinite alternate; /* Hiệu ứng nháy */
 }
 
 .spinner {
@@ -24,7 +23,7 @@ body {
     height: 50px;
     border-radius: 50%;
     border: 8px solid transparent;
-    border-top: 8px solid #3498db; /* Màu sắc cho phần trên */
+    border-top: 8px solid #000; /* Màu sắc cho phần trên */
     animation: spin 1s linear infinite, change-color 1s linear infinite; /* Hiệu ứng xoay và đổi màu */
 }
 
@@ -34,16 +33,9 @@ body {
 }
 
 @keyframes change-color {
-    0% { border-top-color: #3498db; } /* Màu xanh */
-    25% { border-top-color: #e74c3c; } /* Màu đỏ */
-    50% { border-top-color: #f1c40f; } /* Màu vàng */
-    75% { border-top-color: #2ecc71; } /* Màu xanh lá */
-    100% { border-top-color: #9b59b6; } /* Màu tím */
-}
-
-@keyframes fade {
-    0% { background: rgba(255, 255, 255, 0.9); }
-    100% { background: rgba(0, 0, 0, 0.1); } /* Nháy sang màu đen nhạt */
+    0% { border-top-color: #000; } /* Màu đen */
+    50% { border-top-color: #fff; } /* Màu trắng */
+    100% { border-top-color: #000; } /* Màu đen */
 }
 
 .container {
@@ -67,15 +59,12 @@ nav {
 }
 
 nav ul {
-    display: flex;
-    flex-wrap: wrap; /* Cho phép các liên kết xuống dòng */
-    list-style-type: none;
-    padding: 0;
-    justify-content: center; /* Canh giữa các liên kết */
+    list-style-type: none; /* Bỏ dấu đầu dòng */
+    padding: 0; /* Bỏ khoảng cách */
 }
 
 nav li {
-    margin: 10px; /* Khoảng cách giữa các liên kết */
+    margin: 10px 0; /* Khoảng cách giữa các liên kết */
 }
 
 nav a {
