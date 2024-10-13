@@ -74,12 +74,35 @@
             font-size: 12px;
             color: #777;
         }
+
+        .music-controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .music-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .music-controls button:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+        }
     </style>
 </head>
 <body>
     <!-- Thêm thẻ audio -->
     <audio id="background-music" loop>
-        <source src="https://www.example.com/path/to/your/music.mp3" type="audio/mpeg"> <!-- Thay đổi link nhạc -->
+        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -98,26 +121,29 @@
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
+
+        <div class="music-controls">
+            <button id="play-button">Bật nhạc "Tuyệt nàng đi"</button>
+            <button id="pause-button">Tắt nhạc "Tuyệt nàng đi"</button>
+        </div>
+
         <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p> <!-- Thông tin bản quyền không nháy -->
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        const music = document.getElementById("background-music");
-        let isPlaying = true;
+        const audio = document.getElementById('background-music');
+        const playButton = document.getElementById('play-button');
+        const pauseButton = document.getElementById('pause-button');
 
-        function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                isPlaying = false;
-                document.getElementById("toggle-button").innerText = "Bật nhạc \"Tuyệt nàng đi\"";
-            } else {
-                music.play();
-                isPlaying = true;
-                document.getElementById("toggle-button").innerText = "Tắt nhạc \"Tuyệt nàng đi\"";
-            }
-        }
+        playButton.addEventListener('click', () => {
+            audio.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            audio.pause();
+        });
     </script>
 </body>
 </html>
