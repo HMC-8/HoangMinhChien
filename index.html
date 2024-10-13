@@ -39,29 +39,24 @@
             border-image: linear-gradient(45deg, white, black) 1; /* Viền xen kẽ trắng đen */
         }
 
-        h1 {
-            font-size: 32px;
+        h1, p {
+            font-size: 32px; /* Kích thước chữ cho tên và thông điệp */
             margin: 10px 0;
-            background: linear-gradient(to right, #ff0080, #ff8c00); /* Hiệu ứng chuyển màu */
-            -webkit-background-clip: text; /* Cắt nền theo văn bản */
-            -webkit-text-fill-color: transparent; /* Đổ màu nền vào văn bản */
-            animation: flashing 1s linear infinite; /* Thêm hiệu ứng nháy */
+            display: inline-block; /* Để áp dụng animation */
+            animation: diagonal-slide 2s linear infinite; /* Thêm hiệu ứng di chuyển chéo */
         }
 
-        p {
-            font-size: 18px;
-            margin: 10px 0;
-            animation: flashing 1s linear infinite; /* Thêm hiệu ứng nháy */
-        }
-
-        @keyframes flashing {
+        @keyframes diagonal-slide {
             0% {
+                transform: translateX(-100%) rotate(-2deg); /* Bắt đầu từ bên trái */
                 color: white; /* Màu trắng */
             }
             50% {
+                transform: translateX(100%) rotate(2deg); /* Đến bên phải */
                 color: black; /* Màu đen */
             }
             100% {
+                transform: translateX(-100%) rotate(-2deg); /* Quay về bên trái */
                 color: white; /* Màu trắng */
             }
         }
@@ -145,7 +140,7 @@
         </nav>
         <footer>
             <button class="music-toggle" onclick="toggleMusic()">Tắt/Bật nhạc "Tuyệt nàng đi"</button>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p> <!-- Nội dung không nhấp nháy -->
         </footer>
     </div>
 
