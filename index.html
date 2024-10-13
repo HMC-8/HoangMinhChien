@@ -102,15 +102,24 @@
             background-color: rgba(240, 240, 240, 0.9);
         }
 
-        /* Hiệu ứng đổi màu cho tên */
+        /* Hiệu ứng đổi màu từ trắng sang đen chỉ cho tên */
         .name {
-            animation: color-change 5s infinite alternate;
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(to right, white, gray, black);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: text-gradient 5s infinite alternate;
         }
 
-        @keyframes color-change {
-            0% { color: white; }
-            50% { color: gray; }
-            100% { color: black; }
+        @keyframes text-gradient {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
         }
     </style>
 </head>
