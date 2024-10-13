@@ -37,6 +37,30 @@
             height: 100px; /* Đặt chiều cao cho ảnh */
             border-radius: 50%; /* Cắt ảnh thành hình tròn */
             object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+            border: 2px solid transparent; /* Viền 2px mặc định trong suốt */
+            position: relative; /* Để dễ dàng tạo hiệu ứng */
+        }
+
+        /* Viền hình tròn chuyển đổi màu trắng đen */
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%; /* Hình tròn */
+            border: 2px solid transparent; /* Viền mặc định trong suốt */
+            animation: borderAnimation 3s linear infinite; /* Hoạt ảnh viền */
+        }
+
+        @keyframes borderAnimation {
+            0%, 100% {
+                border-color: white; /* Màu trắng đầu và cuối */
+            }
+            50% {
+                border-color: black; /* Màu đen giữa */
+            }
         }
 
         .moving-text {
@@ -50,11 +74,8 @@
             0% {
                 color: white; /* Màu bắt đầu */
             }
-            50% {
-                color: black; /* Màu giữa */
-            }
             100% {
-                color: white; /* Quay lại màu ban đầu */
+                color: black; /* Quay lại màu cuối cùng */
             }
         }
 
@@ -110,6 +131,12 @@
         .toggle-music:hover {
             background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
         }
+
+        .song-title {
+            font-size: 16px; /* Kích thước chữ cho tên bài hát */
+            color: white; /* Màu chữ bài hát */
+            margin-top: 10px; /* Khoảng cách phía trên */
+        }
     </style>
 </head>
 <body>
@@ -124,6 +151,7 @@
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
             <h1 class="moving-text">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p class="moving-text">Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung -->
+            <div class="song-title">Bài hát: Tuyệt Nàng Đi</div> <!-- Tên bài hát -->
         </header>
         <nav>
             <ul>
@@ -136,7 +164,7 @@
         </nav>
 
         <!-- Nút bật/tắt nhạc -->
-        <button class="toggle-music" onclick="toggleMusic()">Tắt Nhạc</button>
+        <button class="toggle-music" onclick="toggleMusic()">Tắt nhạc Tuyệt Nàng Đi</button>
 
         <footer>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
@@ -146,16 +174,10 @@
     <script>
         const audio = document.getElementById('background-audio');
         const toggleButton = document.querySelector('.toggle-music');
-        
+
         function toggleMusic() {
             if (audio.paused) {
                 audio.play();
-                toggleButton.textContent = 'Tắt Nhạc'; // Đổi nội dung nút khi nhạc đang phát
+                toggleButton.textContent = 'Tắt nhạc Tuyệt Nàng Đi';
             } else {
-                audio.pause();
-                toggleButton.textContent = 'Bật Nhạc'; // Đổi nội dung nút khi nhạc đã dừng
-            }
-        }
-    </script>
-</body>
-</html>
+                audio
