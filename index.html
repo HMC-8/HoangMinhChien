@@ -18,7 +18,7 @@
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 40px;
+            padding: 20px; /* Điều chỉnh độ padding */
             position: relative;
             top: 50%;
             transform: translateY(-50%); /* Căn giữa theo chiều dọc */
@@ -42,25 +42,25 @@
             border-image: linear-gradient(45deg, white, black) 1; /* Viền xen kẽ trắng đen */
         }
 
-        h1, p {
+        .moving-text {
             font-size: 32px; /* Kích thước chữ cho tên và thông điệp */
             margin: 10px 0;
             display: inline-block; /* Để áp dụng animation */
             animation: diagonal-slide 4s linear infinite; /* Thêm hiệu ứng di chuyển chéo */
+            background: linear-gradient(white, black);
+            -webkit-background-clip: text; /* Chỉ clip nền cho văn bản */
+            color: transparent; /* Đặt màu chữ trong suốt */
         }
 
         @keyframes diagonal-slide {
             0% {
                 transform: translateX(-100%); /* Bắt đầu từ bên trái */
-                color: white; /* Màu trắng */
             }
             50% {
                 transform: translateX(100%); /* Đến bên phải */
-                color: black; /* Màu đen */
             }
             100% {
                 transform: translateX(-100%); /* Quay về bên trái */
-                color: white; /* Màu trắng */
             }
         }
 
@@ -122,15 +122,15 @@
 <body>
     <!-- Thêm thẻ audio -->
     <audio id="background-music" loop>
-        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
+        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%Ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊ệ𝒏</h1>
-            <p>Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
+            <h1 class="moving-text">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊ệ𝒏</h1>
+            <p class="moving-text">Xin chào, đây là thông tin của Hoàng Minh Chiến!</p> <!-- Nội dung đã được thay đổi -->
         </header>
         <nav>
             <ul>
@@ -142,7 +142,7 @@
             </ul>
         </nav>
         <footer>
-            <button class="music-toggle" onclick="toggleMusic()">Tắt/Bật nhạc "Tuyệt nàng đi"</button>
+            <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">Bật nhạc "Tuyệt nàng đi"</button>
             <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p> <!-- Nội dung không nhấp nháy -->
         </footer>
     </div>
@@ -150,11 +150,15 @@
     <script>
         // JavaScript để bật/tắt nhạc
         const music = document.getElementById('background-music');
+        const musicToggle = document.getElementById('musicToggle');
+
         function toggleMusic() {
             if (music.paused) {
                 music.play();
+                musicToggle.textContent = "Tắt nhạc 'Tuyệt nàng đi'"; // Cập nhật văn bản nút khi nhạc đang phát
             } else {
                 music.pause();
+                musicToggle.textContent = "Bật nhạc 'Tuyệt nàng đi'"; // Cập nhật văn bản nút khi nhạc tạm dừng
             }
         }
     </script>
