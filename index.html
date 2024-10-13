@@ -5,17 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Giới thiệu - Hoàng Minh Chiến</title>
+    <style>
+        .color-transition {
+            background: linear-gradient(90deg, white, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: color-change 5s infinite; /* Thay đổi tốc độ tại đây */
+        }
+
+        @keyframes color-change {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="info-bubble">
-            <h1 class="name">Hoàng Minh Chiến</h1>
+            <h1 class="name color-transition">Hoàng Minh Chiến</h1>
             <p>Tên tôi là Hoàng Minh Chiến. Tôi đam mê lập trình và phát triển bản thân.</p>
             <p>Link bio: <a href="https://github.com/HMC-8/HoangMinhChien" target="_blank">Hoàng Minh Chiến</a></p>
         </div>
     </header>
     <footer>
-        <p class="footer-text">&copy; 2024 Hoàng Minh Chiến</p>
+        <p class="footer-text color-transition">&copy; 2024 Hoàng Minh Chiến</p>
     </footer>
 </body>
 </html>
