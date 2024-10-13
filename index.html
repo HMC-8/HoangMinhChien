@@ -3,178 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoang Minh Chien</title>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>Giới thiệu về bản thân</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Anton', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            background: url('https://images5.alphacoders.com/133/1330479.png') no-repeat center center fixed;
-            background-size: cover;
-            backdrop-filter: blur(8px);
+            background-color: #f4f4f4;
         }
-        .container {
+        header {
+            background-color: #4CAF50;
+            color: white;
             text-align: center;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
-            position: relative;
-            width: 500px;
-            height: 610px;
-            max-width: 90vw;
-            max-height: 90vh;
+            padding: 1em 0;
         }
         header h1 {
+            margin: 0;
             font-size: 2.5rem;
-            background: linear-gradient(90deg, #ff0066, #6600ff);
-            -webkit-background-clip: text;
-            color: transparent;
         }
-        .content {
-            margin-top: 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .profile-pic {
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .profile img {
+            border-radius: 50%;
             width: 200px;
             height: 200px;
-            border-radius: 50%;
-            border: 5px solid #ff0066;
-            box-shadow: 0 0 20px #ff0066;
+            object-fit: cover;
         }
-        .bio {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            background: linear-gradient(90deg, #00ffff, #ff00ff);
-            -webkit-background-clip: text;
-            color: transparent;
+        .profile-info {
+            max-width: 600px;
         }
-        footer {
-            margin-top: 5px;
-            font-size: 0.9rem;
-            color: #ffffff7a;
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-        .profile-pic:hover {
-            transform: scale(1.1);
-            transition: all 0.3s ease-in-out;
-        }
-        header h1:hover {
-            animation: glow 1s infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #ff0066, 0 0 20px #6600ff, 0 0 30px #ff00ff;
-            }
-            to {
-                text-shadow: 0 0 20px #6600ff, 0 0 30px #ff0066, 0 0 40px #ff00ff;
-            }
-        }
-        .window-controls {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            gap: 10px;
-        }
-        .control {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-        }
-        .red {
-            background-color: #ff5c5c;
-        }
-        .yellow {
-            background-color: #ffcc00;
-        }
-        .green {
-            background-color: #5cff5c;
-        }
-        .bank-info {
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #fff;
+        .profile-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
         .skills {
+            margin-top: 40px;
+        }
+        .skills h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .skills-list {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
-        .skill-icon {
-            width: 40px;
-            height: 40px;
-            margin: 5px;
+        .skill {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 1.1rem;
         }
-        .social-icons {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
-        .social-icons img {
-            width: 30px;
-            height: 30px;
+        footer p {
+            margin: 0;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Giới thiệu về Hoàng Minh Chiến</h1>
+    </header>
     <div class="container">
-        <div class="window-controls">
-            <div class="control red"></div>
-            <div class="control yellow"></div>
-            <div class="control green"></div>
-        </div>
-        <header>
-            <h1>Welcome Back to HenryNET - DEVELOPER</h1>
-        </header>
-        <div class="content">
-            <div class="profile">
-                <img src="https://avatarfiles.alphacoders.com/375/375542.png" alt="Gojo" class="profile-pic">
-                <p class="bio">
-                    Hello to my website 👅, I'm Hoang Minh Chien, nice to meet you 🤟🏻
-                </p>
+        <section class="profile">
+            <img src="https://via.placeholder.com/200" alt="Ảnh đại diện">
+            <div class="profile-info">
+                <h2>Xin chào! Tôi là Hoàng Minh Chiến</h2>
+                <p>Tôi là một lập trình viên với đam mê phát triển web và công nghệ. Tôi thích học hỏi các ngôn ngữ lập trình mới và làm việc trên các dự án sáng tạo. Trong thời gian rảnh, tôi thường khám phá những xu hướng công nghệ mới nhất và tham gia các dự án mã nguồn mở.</p>
             </div>
-            <div class="bank-info">
-                <p>PROGRAMMING LANGUAGE SKILLS</p>
+        </section>
+
+        <section class="skills">
+            <h3>Kỹ Năng Của Tôi</h3>
+            <div class="skills-list">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">PHP</div>
+                <div class="skill">Python</div>
+                <div class="skill">Git</div>
+                <div class="skill">React</div>
             </div>
-            <div class="skills">
-                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/php.png" alt="PHP" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/go.png" alt="Go" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/ruby.png" alt="Ruby" class="skill-icon">
-                <img src="https://img.icons8.com/color/48/000000/c-plus-plus.png" alt="C++" class="skill-icon">
-            </div>
-        </div>
-        <footer>
-            <p>© 2024 Hoang Minh Chien</p>
-        </footer>
-        <div class="social-icons">
-            <a href="https://t.me/henrynet206" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
-            </a>
-            <a href="https://github.com/haibedzdev" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
-            </a>
-        </div>
+        </section>
     </div>
-    <audio autoplay>
-        <source src="audio.mp3" type="audio/mpeg">
-    </audio>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var audio = document.querySelector('audio');
-            audio.play();
-        });
-    </script>
+    
+    <footer>
+        <p>© 2024 Hoàng Minh Chiến - Tất cả quyền được bảo lưu.</p>
+    </footer>
 </body>
 </html>
