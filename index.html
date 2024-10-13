@@ -23,6 +23,9 @@
             top: 50%;
             transform: translateY(-50%); /* Căn giữa theo chiều dọc */
             text-align: center; /* Căn giữa tất cả văn bản */
+            background-color: rgba(255, 255, 255, 0.1); /* Nền trắng siêu nhạt */
+            border-radius: 10px; /* Bo tròn góc */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho container */
         }
 
         header {
@@ -43,20 +46,20 @@
             font-size: 32px; /* Kích thước chữ cho tên và thông điệp */
             margin: 10px 0;
             display: inline-block; /* Để áp dụng animation */
-            animation: diagonal-slide 2s linear infinite; /* Thêm hiệu ứng di chuyển chéo */
+            animation: diagonal-slide 4s linear infinite; /* Thêm hiệu ứng di chuyển chéo */
         }
 
         @keyframes diagonal-slide {
             0% {
-                transform: translateX(-100%) rotate(-2deg); /* Bắt đầu từ bên trái */
+                transform: translateX(-100%); /* Bắt đầu từ bên trái */
                 color: white; /* Màu trắng */
             }
             50% {
-                transform: translateX(100%) rotate(2deg); /* Đến bên phải */
+                transform: translateX(100%); /* Đến bên phải */
                 color: black; /* Màu đen */
             }
             100% {
-                transform: translateX(-100%) rotate(-2deg); /* Quay về bên trái */
+                transform: translateX(-100%); /* Quay về bên trái */
                 color: white; /* Màu trắng */
             }
         }
