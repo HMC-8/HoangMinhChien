@@ -9,33 +9,70 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
-            background-size: cover; /* Phủ kín hình nền */
-            background-position: center; /* Căn giữa hình nền */
-            height: 100vh; /* Chiều cao toàn bộ viewport */
+            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            display: flex;
+            flex-direction: column; /* Sắp xếp theo chiều dọc */
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            width: 80%; /* Độ rộng của thanh chạy */
+            background-color: rgba(200, 200, 200, 0.8);
+            border-radius: 10px;
+            overflow: hidden; /* Ẩn phần thừa */
+            margin-top: 20px;
+        }
+
+        .progress {
+            width: 0; /* Bắt đầu từ 0 */
+            height: 10px; /* Chiều cao thanh chạy */
+            background-color: #4caf50; /* Màu xanh lá */
+            transition: width 0.1s ease; /* Hiệu ứng chuyển động */
+        }
+
+        #percentage {
+            margin-top: 10px; /* Khoảng cách giữa thanh chạy và tỷ lệ phần trăm */
+            font-weight: bold; /* Chữ đậm */
+            color: #4caf50; /* Màu chữ xanh lá */
         }
 
         .container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
-            text-align: center; /* Căn giữa tất cả văn bản */
+            text-align: center;
             position: relative;
             top: 50%;
-            transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+            transform: translateY(-50%);
         }
 
         .profile-img {
-            width: 100px; /* Đặt chiều rộng cho ảnh */
-            height: 100px; /* Đặt chiều cao cho ảnh */
-            border-radius: 50%; /* Cắt ảnh thành hình tròn */
-            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
-            margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
         }
 
         h1, p {
             margin: 10px 0;
-            color: white; /* Màu chữ trắng cho tên */
+            color: white;
         }
 
         nav {
@@ -43,29 +80,29 @@
         }
 
         nav ul {
-            list-style: none; /* Bỏ dấu đầu dòng */
-            padding: 0; /* Bỏ khoảng cách padding */
+            list-style: none;
+            padding: 0;
         }
 
         nav ul li {
-            margin: 15px 0; /* Khoảng cách giữa các liên kết */
+            margin: 15px 0;
         }
 
         nav ul li a {
-            display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
-            text-decoration: none; /* Bỏ gạch chân */
-            color: black; /* Màu chữ */
-            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
-            padding: 15px 25px; /* Khoảng cách bên trong */
-            border-radius: 30px; /* Bo tròn góc */
-            border: 2px solid white; /* Viền trắng đậm */
-            font-weight: bold; /* Chữ đậm */
-            transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 2px solid white;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         nav ul li a:hover {
-            background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
-            transform: scale(1.05); /* Tăng kích thước khi hover */
+            background-color: rgba(240, 240, 240, 0.9);
+            transform: scale(1.05);
         }
 
         footer {
@@ -96,17 +133,24 @@
     </style>
 </head>
 <body>
-    <!-- Thêm thẻ audio -->
+    <div id="loading" class="loading">
+        <h2>Đang tải...</h2>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div id="percentage">0%</div> <!-- Hiển thị tỷ lệ phần trăm -->
+    </div>
+
     <audio id="background-music" loop>
-        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
+        <source src="https://github.com/HMC-8/HoangMinhChien/blob/daa87507ee17e644696dace50920af81068c6102/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3?raw=true" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img"> <!-- Ảnh đại diện -->
-            <h1>Hoàng Minh Chiến</h1> <!-- Tên đã chỉnh sửa -->
-            <p>Xin chào, đây là thông tin của tôi!</p> <!-- Nội dung đã được sửa -->
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
+            <h1>Hoàng Minh Chiến</h1>
+            <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
         <nav>
             <ul>
@@ -128,20 +172,26 @@
     </div>
 
     <script>
-        const audio = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = false;
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            const progress = document.querySelector('.progress');
+            const percentage = document.getElementById('percentage');
+            const audio = document.getElementById('background-music');
+            let width = 0;
 
-        toggleButton.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
-            } else {
-                audio.play();
-                toggleButton.innerText = 'Tắt nhạc "Tuyệt nàng đi"';
-            }
-            isPlaying = !isPlaying;
+            const loadingInterval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(loadingInterval); // Dừng khi đạt 100%
+                    loading.style.display = 'none'; // Ẩn phần tử loading
+                    
+                    // Tự động bật nhạc khi tải xong
+                    audio.play().catch(error => {
+                        console.log('Nhạc không thể tự động phát: ', error);
+                    });
+                } else {
+                    width++;
+                    progress.style.width = width + '%'; // Cập nhật độ rộng thanh chạy
+                    percentage.innerText = width + '%'; // Cập nhật tỷ lệ phần trăm
+                }
+            }, 30); // Thay đổi thời gian để điều chỉnh tốc độ
         });
-    </script>
-</body>
-</html>
