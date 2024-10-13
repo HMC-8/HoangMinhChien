@@ -1,6 +1,71 @@
-h1 {
-    font-size: 5vw; /* Kích thước chữ phụ thuộc vào chiều rộng cửa sổ trình duyệt */
-    white-space: nowrap;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Hình nền */
+    background-size: cover; /* Phủ kín hình nền */
+    background-position: center; /* Căn giữa hình nền */
+    height: 100vh; /* Chiều cao toàn bộ viewport */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center; /* Căn giữa tất cả văn bản */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+}
+
+.profile-img {
+    width: 100px; /* Đặt chiều rộng cho ảnh */
+    height: 100px; /* Đặt chiều cao cho ảnh */
+    border-radius: 50%; /* Cắt ảnh thành hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và tên */
+}
+
+h1 {
+    font-size: 4vw; /* Kích thước chữ dựa trên chiều rộng màn hình */
+    white-space: nowrap; /* Ngăn tiêu đề xuống dòng */
+    color: white; /* Màu chữ */
+    margin: 10px 0;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none; /* Bỏ dấu đầu dòng */
+    padding: 0; /* Bỏ khoảng cách padding */
+}
+
+nav ul li {
+    margin: 15px 0; /* Khoảng cách giữa các liên kết */
+}
+
+nav ul li a {
+    display: inline-block; /* Hiển thị dưới dạng khối để dễ đóng khung */
+    text-decoration: none; /* Bỏ gạch chân */
+    color: black; /* Màu chữ */
+    background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng nhạt */
+    padding: 15px 25px; /* Khoảng cách bên trong */
+    border-radius: 30px; /* Bo tròn góc */
+    border: 2px solid white; /* Viền trắng đậm */
+    font-weight: bold; /* Chữ đậm */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển màu và phóng to */
+}
+
+nav ul li a:hover {
+    background-color: rgba(240, 240, 240, 0.9); /* Màu nền khi hover */
+    transform: scale(1.05); /* Tăng kích thước khi hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
 }
