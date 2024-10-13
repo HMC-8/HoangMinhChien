@@ -9,7 +9,10 @@ window.addEventListener('load', () => {
     const loadingInterval = setInterval(() => {
         if (width >= 100) {
             clearInterval(loadingInterval); // Dừng khi đạt 100%
-            loading.style.display = 'none'; // Ẩn phần tử loading
+            loading.style.opacity = '0'; // Đưa loading vào trạng thái trong suốt
+            setTimeout(() => {
+                loading.style.display = 'none'; // Ẩn phần tử loading sau khi hiệu ứng
+            }, 500); // Thời gian chờ để hiệu ứng hoàn tất
             
             // Tự động bật nhạc khi tải xong
             audio.play().catch(error => {
