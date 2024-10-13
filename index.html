@@ -42,10 +42,10 @@
                 box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); /* Bắt đầu với viền trắng */
             }
             50% {
-                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5); /* Viền trắng rõ ràng */
+                box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); /* Viền trắng rõ ràng */
             }
             100% {
-                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.5); /* Chuyển sang viền đen */
+                box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.5); /* Chuyển sang viền đen */
             }
         }
 
@@ -92,17 +92,10 @@
             transform: scale(1.05); /* Tăng kích thước khi hover */
         }
 
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-        }
-
-        /* Hiệu ứng chữ "1 0 1 0 1 0" */
+        /* Hiệu ứng chữ "1 0" */
         .effect-container {
             position: absolute;
-            top: -50px; /* Bắt đầu từ trên cùng */
+            top: -100px; /* Bắt đầu từ trên cùng */
             left: 50%;
             transform: translateX(-50%); /* Căn giữa theo chiều ngang */
             white-space: nowrap; /* Đảm bảo không có ngắt dòng */
@@ -123,13 +116,19 @@
                 top: 100vh; /* Kết thúc bên ngoài bên dưới */
             }
         }
+
+        /* Tạo nhiều dòng */
+        .line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+            color: green; /* Màu xanh lá cây */
+            font-size: 20px; /* Kích thước chữ nhỏ */
+            white-space: nowrap; /* Đảm bảo không có ngắt dòng */
+        }
     </style>
 </head>
 <body>
-    <div class="effect-container">
-        <span class="effect-text">1 0 1 0 1 0 1 0</span>
-    </div>
-
     <div class="container">
         <header>
             <div class="avatar-wrapper"> <!-- Bao quanh ảnh đại diện -->
@@ -147,18 +146,15 @@
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><i class="fab fa-tiktok"></i> TikTok</a></li>
             </ul>
         </nav>
+    </div>
 
-        <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-        </footer>
+    <!-- Tạo nhiều dòng số 1 và 0 -->
+    <div class="effect-container">
+        <div class="line" style="animation: fall 10s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
+        <div class="line" style="top: 50px; animation: fall 12s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
+        <div class="line" style="top: 100px; animation: fall 8s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
+        <div class="line" style="top: 150px; animation: fall 11s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
+        <div class="line" style="top: 200px; animation: fall 9s linear infinite;">1 0 1 0 1 0 1 0 1 0</div>
     </div>
 </body>
 </html>
-"""
-
-# Saving the HTML content to a file
-file_path = '/mnt/data/thong_tin_hoang_minh_chien.html'
-with open(file_path, 'w', encoding='utf-8') as file:
-    file.write(html_content)
-
-file_path
