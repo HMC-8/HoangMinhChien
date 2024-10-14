@@ -9,7 +9,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Nền trắng siêu nhạt */
+            background-image: url('https://i.imgur.com/fFLOlXU.jpeg'); /* Ảnh nền như trước */
+            background-size: cover;
+            background-position: center;
             height: 100vh;
             overflow: hidden;
         }
@@ -22,7 +24,7 @@
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.9); /* Nền trắng cho khung */
+            background-color: rgba(255, 255, 255, 0.95); /* Nền trắng siêu nhạt cho khung */
             border-radius: 10px; /* Bo góc cho khung */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Đổ bóng cho khung */
         }
@@ -30,12 +32,9 @@
         .profile-img {
             width: 80px; /* Giảm kích thước ảnh đại diện */
             height: 80px;
-            border-radius: 50%;
+            border-radius: 50%; /* Hình tròn */
             object-fit: cover;
             margin-bottom: 10px;
-            border: 3px solid transparent; /* Viền mỏng */
-            background-image: linear-gradient(45deg, silver, white, silver);
-            background-clip: border-box;
         }
 
         h1, p {
@@ -57,23 +56,22 @@
         }
 
         nav ul li a {
-            display: inline-block;
+            display: inline-flex; /* Sử dụng inline-flex để căn giữa logo và văn bản */
+            align-items: center; /* Căn giữa logo và văn bản */
             text-decoration: none;
             color: black;
             background-color: rgba(255, 255, 255, 0.8);
             padding: 8px 15px; /* Giảm padding */
             border-radius: 25px; /* Giảm độ cong */
             border: 2px solid white;
-            font-weight: bold;
             transition: background-color 0.3s, transform 0.2s;
-            align-items: center; /* Căn giữa logo và văn bản */
         }
 
         nav ul li img {
-            width: 20px; /* Kích thước logo nền tảng */
-            height: 20px;
+            width: 25px; /* Kích thước logo nền tảng */
+            height: 25px;
+            border-radius: 5px; /* Bo góc cho logo hình vuông */
             margin-right: 8px; /* Khoảng cách giữa logo và văn bản */
-            vertical-align: middle; /* Căn chỉnh logo với văn bản */
         }
 
         nav ul li a:hover {
@@ -94,7 +92,7 @@
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
             <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p>Đây là thông tin của Hoàng Minh Chiến!</p>
+            <p style="color: white;">Đây là thông tin của Hoàng Minh Chiến!</p> <!-- Đảm bảo chữ trắng -->
         </header>
         <nav>
             <ul>
