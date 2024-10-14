@@ -26,17 +26,21 @@
             transform: translateY(-50%);
         }
 
-        /* Cập nhật hình ảnh đại diện */
         .profile-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 10px;
-            border: 3px solid transparent; /* Viền mỏng hơn */
+            border: 3px solid transparent;
             background-image: linear-gradient(45deg, silver, white, silver);
             background-clip: border-box;
             animation: border-animation 5s infinite alternate;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         @keyframes border-animation {
@@ -81,7 +85,7 @@
 
         footer {
             text-align: center;
-            margin-top: 10px; /* Thay đổi để tăng khoảng cách với nút */
+            margin-top: 10px; 
             font-size: 12px;
             color: #777;
         }
@@ -105,7 +109,6 @@
             background-color: rgba(240, 240, 240, 0.9);
         }
 
-        /* Hiệu ứng đổi màu từ trắng sang đen chỉ cho tên */
         .name {
             font-size: 36px;
             font-weight: bold;
@@ -125,19 +128,19 @@
             }
         }
 
-        /* Logo xã hội */
         .social-logo {
-            width: 30px; /* Kích thước logo */
-            height: 30px;
+            width: 40px; /* Kích thước logo */
+            height: 40px;
             border-radius: 50%; /* Hình tròn */
             margin-right: 10px; /* Khoảng cách giữa logo và tên */
             vertical-align: middle; /* Căn giữa với văn bản */
+            object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình tròn */
         }
     </style>
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -150,8 +153,8 @@
         <nav>
             <ul>
                 <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="social-logo">Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Telegram_logo.svg" alt="Telegram" class="social-logo">Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Zalo_logo.png" alt="Zalo" class="social-logo">Zalo</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Telegram_logo.svg" alt="Telegram" class="social-logo">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185"><img src="https://zalo.me/logo/zalo.png" alt="Zalo" class="social-logo">Zalo</a></li>
                 <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="social-logo">YouTube</a></li>
                 <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/TikTok_logo_2021.svg" alt="TikTok" class="social-logo">TikTok</a></li>
             </ul>
