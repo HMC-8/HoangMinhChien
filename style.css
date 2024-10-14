@@ -12,7 +12,7 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     position: relative;
     top: 50%;
@@ -20,75 +20,24 @@ body {
 }
 
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid transparent;
-    background-image: linear-gradient(45deg, silver, white, silver);
-    background-clip: border-box;
-    animation: border-animation 5s infinite alternate;
-    transition: transform 0.3s;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-}
-
-@keyframes border-animation {
-    0% { border-color: white; }
-    100% { border-color: black; }
+    margin-bottom: 8px;
 }
 
 h1, p {
-    margin: 10px 0;
+    margin: 6px 0;
     color: white;
 }
 
-nav {
-    margin-top: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 15px 0;
-}
-
-nav ul li a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px 15px; /* Điều chỉnh kích thước padding cho link */
-    border-radius: 30px;
-    border: 2px solid white;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(240, 240, 240, 0.9);
-    transform: scale(1.05);
-}
-
-footer {
-    text-align: center;
-    margin-top: 10px; 
-    font-size: 12px;
-    color: #777;
-}
-
 .music-controls {
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .music-controls button {
-    padding: 10px 20px;
+    padding: 7px 12px;
     border: none;
     border-radius: 5px;
     background-color: white;
@@ -96,38 +45,22 @@ footer {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 16px; /* Kích thước chữ cho nút điều khiển nhạc */
 }
 
 .music-controls button:hover {
     background-color: rgba(240, 240, 240, 0.9);
 }
 
-.name {
-    font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient(to right, white, gray, black);
-    background-size: 200%;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: text-gradient 5s infinite alternate;
+/* Hiệu ứng chói sáng */
+.glow {
+    animation: glow-animation 0.5s infinite alternate;
 }
 
-@keyframes text-gradient {
-    0% {
-        background-position: 0%;
+@keyframes glow-animation {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
     }
-    100% {
-        background-position: 100%;
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.7);
     }
-}
-
-.social-logo {
-    width: 30px; /* Kích thước logo */
-    height: 30px; /* Kích thước logo */
-    border-radius: 50%; /* Hình tròn */
-    margin-right: 10px; /* Khoảng cách giữa logo và tên */
-    vertical-align: middle; /* Căn giữa với văn bản */
-    object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình vuông góc tròn */
-    background-color: black; /* Màu nền cho logo */
 }
