@@ -129,13 +129,12 @@
         }
 
         .social-logo {
-            width: 25px; /* Kích thước logo */
-            height: 25px; /* Kích thước logo */
-            border-radius: 50%; /* Hình vuông góc tròn */
+            width: 40px; /* Kích thước logo đã giảm */
+            height: 40px; /* Kích thước logo đã giảm */
+            border-radius: 50%; /* Hình tròn */
             margin-right: 10px; /* Khoảng cách giữa logo và tên */
             vertical-align: middle; /* Căn giữa với văn bản */
             object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình vuông góc tròn */
-            background-color: black; /* Màu nền cho logo */
         }
     </style>
 </head>
@@ -155,56 +154,34 @@
             <ul>
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="social-logo">Facebook
+                        <img src="https://png.pngtree.com/element_our/png/20180930/facebook-logo-icon-design-vector-png_115284.jpg" alt="Facebook" class="social-logo">Facebook
                     </a>
                 </li>
                 <li>
                     <a href="https://t.me/HoangMinhChien_8">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Telegram_logo.svg" alt="Telegram" class="social-logo">Telegram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://zalo.me/0345161185">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Zalo_logo.png" alt="Zalo" class="social-logo">Zalo
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="social-logo">YouTube
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
                     </a>
                 </li>
                 <li>
                     <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/TikTok_logo_2021.svg" alt="TikTok" class="social-logo">TikTok
+                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
+                    </a>
+                </li>
+                <li>
+                    <a href="https://zalo.me/0345161185">
+                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-logo">YouTube
                     </a>
                 </li>
             </ul>
         </nav>
-
-        <div class="music-controls">
-            <button id="toggle-music-button">Bật nhạc "Tuyệt nàng đi"</button>
-        </div>
-
         <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+            <p>© 2024 Hoàng Minh Chiến. Tất cả quyền được bảo lưu.</p>
         </footer>
     </div>
-
-    <script>
-        const audio = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = false;
-
-        toggleButton.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.textContent = 'Bật nhạc "Tuyệt nàng đi"';
-            } else {
-                audio.play();
-                toggleButton.textContent = 'Tắt nhạc';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
 </body>
 </html>
