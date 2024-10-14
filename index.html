@@ -139,7 +139,7 @@
             background-color: black;
         }
 
-        /* Hiệu ứng chói sáng cho tên */
+        /* Hiệu ứng chói sáng */
         .glow {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
             animation: glow-animation 0.5s infinite alternate;
@@ -156,7 +156,6 @@
 
         /* Hiệu ứng chói sáng cho avatar */
         .glow-avatar {
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
             animation: glow-avatar-animation 0.5s infinite alternate;
         }
 
@@ -172,7 +171,7 @@
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/cdc34b93952e2a53ca18c0b51fefa2f4e78b1037/7d774ba6e7071873c5874557509ab809.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/6732321480eefbb1d35f84095cd9877a19d57d7e/7d774ba6e7071873c5874557509ab809.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -228,4 +227,9 @@
         const avatarElement = document.getElementById('avatar');
         let isPlaying = false;
 
-        toggleButton.addEvent
+        toggleButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.textContent = 'Bật nhạc Chill . . .';
+                nameElement.classList.remove('glow');
+                avatarElement.classList.remove
