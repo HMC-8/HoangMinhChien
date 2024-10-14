@@ -22,8 +22,8 @@ body {
 .profile-img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Hình tròn */
+    object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình vuông góc tròn */
     margin-bottom: 10px;
     border: 3px solid transparent;
     background-image: linear-gradient(45deg, silver, white, silver);
@@ -122,8 +122,8 @@ footer {
 }
 
 .social-logo {
-    width: 40px; /* Kích thước logo đã giảm */
-    height: 40px; /* Kích thước logo đã giảm */
+    width: 30px; /* Kích thước logo đã giảm xuống */
+    height: 30px; /* Kích thước logo đã giảm xuống */
     border-radius: 50%; /* Hình tròn */
     margin-right: 10px; /* Khoảng cách giữa logo và tên */
     vertical-align: middle; /* Căn giữa với văn bản */
