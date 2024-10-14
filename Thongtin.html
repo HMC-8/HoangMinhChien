@@ -22,13 +22,17 @@
         .profile-img {
             width: 150px;
             border-radius: 50%;
-            filter: brightness(1.2); /* Làm sáng ảnh */
-            transition: filter 0.3s; /* Hiệu ứng chuyển tiếp */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Hiệu ứng sáng cho avatar */
         }
         .name {
             font-size: 24px;
             font-weight: bold;
-            filter: brightness(1.2); /* Làm sáng tên */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Hiệu ứng sáng cho tên */
+        }
+        .social-logo {
+            width: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
         }
         nav ul {
             list-style-type: none;
@@ -38,11 +42,6 @@
             display: inline;
             margin: 0 15px;
         }
-        .social-logo {
-            width: 24px;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
     </style>
 </head>
 <body>
@@ -50,7 +49,7 @@
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
             <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p>Đây là thông tin của Hoang Minh Chien!</p>
+            <p>Đây là thông tin của Hoang Minh Chiến!</p>
         </header>
         <nav>
             <ul>
