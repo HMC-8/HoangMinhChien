@@ -1,79 +1,132 @@
-/* CSS cho hiệu ứng loading */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999; /* Đảm bảo loading ở trên cùng */
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 8px solid transparent;
-    border-top: 8px solid #000; /* Màu sắc cho phần trên */
-    animation: spin 1s linear infinite, change-color 1s linear infinite; /* Hiệu ứng xoay và đổi màu */
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes change-color {
-    0% { border-top-color: #000; } /* Màu đen */
-    50% { border-top-color: #fff; } /* Màu trắng */
-    100% { border-top-color: #000; } /* Màu đen */
+    background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
-    display: none; /* Ẩn nội dung chính cho đến khi loading xong */
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
     padding: 20px;
-}
-
-header {
     text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
+/* Cập nhật hình ảnh đại diện */
 .profile-img {
-    width: 150px; /* Chiều rộng ảnh đại diện */
-    border-radius: 50%; /* Cắt ảnh thành hình tròn */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid transparent; /* Viền mỏng hơn */
+    background-image: linear-gradient(45deg, silver, white, silver);
+    background-clip: border-box;
+    animation: border-animation 5s infinite alternate;
+}
+
+@keyframes border-animation {
+    0% { border-color: white; }
+    100% { border-color: black; }
+}
+
+h1, p {
+    margin: 10px 0;
+    color: white;
 }
 
 nav {
-    margin: 20px 0; /* Khoảng cách trên và dưới nav */
+    margin-top: 20px;
 }
 
 nav ul {
-    list-style-type: none; /* Bỏ dấu đầu dòng */
-    padding: 0; /* Bỏ khoảng cách */
+    list-style: none;
+    padding: 0;
 }
 
-nav li {
-    margin: 10px 0; /* Khoảng cách giữa các liên kết */
+nav ul li {
+    margin: 15px 0;
 }
 
-nav a {
-    text-decoration: none; /* Bỏ gạch chân */
-    color: blue; /* Màu chữ */
-    font-weight: bold; /* Đậm chữ cho các liên kết */
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid white;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav ul li a img {
+    vertical-align: middle; /* Giữ logo cân bằng với text */
+    margin-right: 10px; /* Khoảng cách giữa logo và text */
+    width: 30px; /* Kích thước logo */
+    height: 30px; /* Đảm bảo tỷ lệ khung hình */
+    border-radius: 50%; /* Cắt logo thành hình tròn */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+}
+
+nav ul li a:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+    transform: scale(1.05);
 }
 
 footer {
-    margin-top: 20px; /* Khoảng cách phía trên footer */
-    text-align: center; /* Canh giữa nội dung footer */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+    position: absolute; /* Giúp bản quyền nằm ở cuối trang */
+    bottom: 20px; /* Khoảng cách từ dưới lên */
+    left: 0;
+    right: 0; /* Đảm bảo căn giữa */
+}
+
+.music-controls {
+    margin-top: 20px;
+}
+
+.music-controls button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.music-controls button:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+/* Hiệu ứng đổi màu từ trắng sang đen chỉ cho tên */
+.name {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(to right, white, gray, black);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: text-gradient 5s infinite alternate;
+}
+
+@keyframes text-gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
 }
