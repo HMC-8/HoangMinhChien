@@ -129,8 +129,8 @@
         }
 
         .social-logo {
-            width: 40px; /* Kích thước logo */
-            height: 40px; /* Kích thước logo */
+            width: 30px; /* Kích thước logo nhỏ hơn */
+            height: 30px; /* Kích thước logo nhỏ hơn */
             border-radius: 10%; /* Hình vuông góc tròn */
             margin-right: 10px; /* Khoảng cách giữa logo và tên */
             vertical-align: middle; /* Căn giữa với văn bản */
@@ -193,4 +193,18 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying =
+        let isPlaying = false;
+
+        toggleButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.textContent = 'Bật nhạc "Tuyệt nàng đi"';
+            } else {
+                audio.play();
+                toggleButton.textContent = 'Tắt nhạc';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
