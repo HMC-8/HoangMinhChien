@@ -5,143 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin Hoàng Minh Chiến</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Cập nhật hình ảnh đại diện */
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid transparent; /* Viền mỏng hơn */
-            background-image: linear-gradient(45deg, silver, white, silver);
-            background-clip: border-box;
-            animation: border-animation 5s infinite alternate;
-        }
-
-        @keyframes border-animation {
-            0% { border-color: white; }
-            100% { border-color: black; }
-        }
-
-        h1, p {
-            margin: 10px 0;
-            color: white;
-        }
-
-        nav {
-            margin-top: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 15px 0;
-        }
-
-        nav ul li a {
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px 25px;
-            border-radius: 30px;
-            border: 2px solid white;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        nav ul li a img {
-            vertical-align: middle; /* Giữ logo cân bằng với text */
-            margin-right: 10px; /* Khoảng cách giữa logo và text */
-            width: 30px; /* Kích thước logo */
-            height: 30px; /* Đảm bảo tỷ lệ khung hình */
-            border-radius: 50%; /* Cắt logo thành hình tròn */
-            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(240, 240, 240, 0.9);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            color: #777;
-            position: absolute; /* Giúp bản quyền nằm ở cuối trang */
-            bottom: 20px; /* Khoảng cách từ dưới lên */
-            left: 0;
-            right: 0; /* Đảm bảo căn giữa */
-        }
-
-        .music-controls {
-            margin-top: 20px;
-        }
-
-        .music-controls button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .music-controls button:hover {
-            background-color: rgba(240, 240, 240, 0.9);
-        }
-
-        /* Hiệu ứng đổi màu từ trắng sang đen chỉ cho tên */
-        .name {
-            font-size: 36px;
-            font-weight: bold;
-            background: linear-gradient(to right, white, gray, black);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: text-gradient 5s infinite alternate;
-        }
-
-        @keyframes text-gradient {
-            0% {
-                background-position: 0%;
-            }
-            100% {
-                background-position: 100%;
-            }
-        }
+        /* CSS đã đề cập ở trên */
     </style>
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -153,31 +22,11 @@
         </header>
         <nav>
             <ul>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrni7mdpEyEl_6Qj_5TGl1FzaoEGMQcgvzg&s" alt="Facebook Logo">Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="https://t.me/HoangMinhChien_8">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61dA_KyDfVQmA4cuspw1GRX-AOvk2i8Tslw&s" alt="Telegram Logo">Telegram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://zalo.me/0345161185">
-                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo Logo">Zalo
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Logo">YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok Logo">TikTok
-                    </a>
-                </li>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrni7mdpEyEl_6Qj_5TGl1FzaoEGMQcgvzg&s" alt="Facebook">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61dA_KyDfVQmA4cuspw1GRX-AOvk2i8Tslw&s" alt="Telegram">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185"><img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="YouTube">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok">TikTok</a></li>
             </ul>
         </nav>
 
@@ -212,6 +61,11 @@
         audio.addEventListener('pause', () => {
             isPlaying = false;
             toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"'; // Cập nhật trạng thái khi nhạc kết thúc
         });
     </script>
 </body>
