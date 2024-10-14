@@ -29,30 +29,43 @@
         }
 
         .profile-img {
-            width: 80px; /* Kích thước ảnh đại diện */
-            height: 80px;
+            width: 70px; /* Kích thước ảnh đại diện */
+            height: 70px;
             border-radius: 50%; /* Hình tròn */
             object-fit: cover;
             margin-bottom: 10px;
-            border: 3px solid white; /* Lớp viền trắng mỏng */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Thêm viền sáng */
-            animation: glow 1.5s infinite alternate; /* Thêm hiệu ứng phát sáng */
+            border: 3px solid transparent; /* Lớp viền trong suốt để tạo hiệu ứng */
+            background-image: linear-gradient(45deg, silver, white, silver);
+            background-clip: border-box; /* Giữ viền bên ngoài */
+            animation: glow-avatar 0.5s infinite alternate; /* Thêm hiệu ứng phát sáng cho ảnh */
+        }
+
+        @keyframes glow-avatar {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
         }
 
         .name {
-            font-size: 24px; /* Kích thước tên */
+            font-size: 30px; /* Kích thước tên */
             margin: 10px 0;
-            animation: glow 1.5s infinite alternate; /* Thêm hiệu ứng phát sáng cho tên */
+            background: linear-gradient(to right, white, gray, black); /* Gradient cho tên */
+            background-size: 200%; /* Tạo hiệu ứng chuyển động */
+            -webkit-background-clip: text; /* Chỉ định gradient cho chữ */
+            color: transparent; /* Ẩn màu chữ để chỉ hiển thị gradient */
+            animation: text-gradient 5s infinite alternate; /* Thêm hiệu ứng phát sáng cho tên */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Thêm bóng chữ */
         }
 
-        @keyframes glow {
+        @keyframes text-gradient {
             0% {
-                text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px rgba(255, 255, 255, 0.7);
-                box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Thêm hiệu ứng phát sáng cho viền */
+                background-position: 0%;
             }
             100% {
-                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px rgba(255, 255, 255, 0.5);
-                box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Thay đổi hiệu ứng phát sáng cho viền */
+                background-position: 100%;
             }
         }
 
