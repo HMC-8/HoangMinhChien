@@ -200,7 +200,10 @@
                 audio.pause();
                 toggleButton.textContent = 'Bật nhạc "Tuyệt nàng đi"';
             } else {
-                audio.play();
+                audio.play().catch(error => {
+                    console.error('Lỗi khi phát âm thanh:', error);
+                    alert('Không thể phát âm thanh. Vui lòng kiểm tra URL.');
+                });
                 toggleButton.textContent = 'Tắt nhạc';
             }
             isPlaying = !isPlaying;
