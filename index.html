@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇻🇳</title>
+    <title>🤟🏻</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -138,6 +138,33 @@
             object-fit: cover;
             background-color: black;
         }
+
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow-animation 0.5s infinite alternate;
+        }
+
+        @keyframes glow-animation {
+            from {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .glow-avatar {
+            animation: glow-avatar-animation 0.5s infinite alternate;
+        }
+
+        @keyframes glow-avatar-animation {
+            from {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
     </style>
 </head>
 <body>
@@ -148,39 +175,10 @@
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
-            <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img glow-avatar" id="avatar">
+            <h1 class="name glow" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="https://t.me/HoangMinhChien_8">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://zalo.me/0345161185">
-                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
-                    </a>
-                </li>
-            </ul>
-        </nav>
 
         <div class="music-controls">
             <button id="toggle-music-button">Bật nhạc Chill . . .</button>
@@ -194,11 +192,9 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-
-        // Biến trạng thái để theo dõi trạng thái nhạc
         let isPlaying = false;
 
-        toggleButton.addEventListener('click', () => {
+        toggleButton.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
                 toggleButton.textContent = 'Bật nhạc Chill . . .';
@@ -206,7 +202,7 @@
                 audio.play();
                 toggleButton.textContent = 'Tắt nhạc . . .';
             }
-            isPlaying = !isPlaying; // Đảo ngược trạng thái
+            isPlaying = !isPlaying;
         });
     </script>
 </body>
