@@ -129,12 +129,12 @@
         }
 
         .social-logo {
-            width: 30px; /* Kích thước logo */
-            height: 30px; /* Kích thước logo */
+            width: 40px; /* Kích thước logo */
+            height: 40px; /* Kích thước logo */
             border-radius: 50%; /* Hình tròn */
             margin-right: 10px; /* Khoảng cách giữa logo và tên */
             vertical-align: middle; /* Căn giữa với văn bản */
-            object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình vuông góc tròn */
+            object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình tròn */
             background-color: black; /* Màu nền cho logo */
         }
     </style>
@@ -155,7 +155,7 @@
             <ul>
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://png.pngtree.com/element_our/png/20180930/facebook-logo-icon-design-vector-png_115284.jpg" alt="Facebook" class="social-logo">Facebook
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
                     </a>
                 </li>
                 <li>
@@ -193,7 +193,7 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = true;
+        let isPlaying = false;
 
         toggleButton.addEventListener('click', () => {
             if (isPlaying) {
