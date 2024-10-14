@@ -129,12 +129,13 @@
         }
 
         .social-logo {
-            width: 30px; /* Kích thước logo đã giảm xuống */
-            height: 30px; /* Kích thước logo đã giảm xuống */
+            width: 30px; /* Kích thước logo */
+            height: 30px; /* Kích thước logo */
             border-radius: 50%; /* Hình tròn */
             margin-right: 10px; /* Khoảng cách giữa logo và tên */
             vertical-align: middle; /* Căn giữa với văn bản */
             object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình vuông góc tròn */
+            background-color: black; /* Màu nền cho logo */
         }
     </style>
 </head>
@@ -154,7 +155,7 @@
             <ul>
                 <li>
                     <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" class="social-logo">Facebook
+                        <img src="https://png.pngtree.com/element_our/png/20180930/facebook-logo-icon-design-vector-png_115284.jpg" alt="Facebook" class="social-logo">Facebook
                     </a>
                 </li>
                 <li>
@@ -169,7 +170,7 @@
                 </li>
                 <li>
                     <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://trunganhmedia.com/wp-content/uploads/2021/06/logo-youtube-den-trang.jpg" alt="YouTube" class="social-logo">YouTube
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
                     </a>
                 </li>
                 <li>
@@ -192,7 +193,7 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = false;
+        let isPlaying = true;
 
         toggleButton.addEventListener('click', () => {
             if (isPlaying) {
