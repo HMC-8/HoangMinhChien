@@ -160,4 +160,41 @@ footer {
     to {
         box-shadow: 0 0 20px rgba(255, 255, 255, 1);
     }
+    /* Cánh vàng */
+.wings {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 50px;
+    background-color: gold;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    animation: flap 1s infinite alternate;
+}
+
+.left-wing {
+    left: -120px;
+    transform: rotate(45deg);
+}
+
+.right-wing {
+    right: -120px;
+    transform: rotate(-45deg);
+}
+
+/* Hiệu ứng bay cho cánh */
+@keyframes flap {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Đặt tên và cánh ở cùng vị trí */
+.name-container {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
 }
