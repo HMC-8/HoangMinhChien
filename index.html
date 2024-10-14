@@ -19,7 +19,7 @@
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 5px; /* Giảm padding */
+            padding: 5px;
             text-align: center;
             position: relative;
             top: 50%;
@@ -27,11 +27,11 @@
         }
 
         .profile-img {
-            width: 70px; /* Giảm kích thước ảnh đại diện */
-            height: 70px; /* Giảm kích thước ảnh đại diện */
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 8px; /* Giảm khoảng cách */
+            margin-bottom: 8px;
             border: 3px solid transparent;
             background-image: linear-gradient(45deg, silver, white, silver);
             background-clip: border-box;
@@ -49,12 +49,13 @@
         }
 
         h1, p {
-            margin: 6px 0; /* Giảm margin */
+            margin: 6px 0;
             color: white;
+            transition: opacity 0.2s;
         }
 
         nav {
-            margin-top: 8px; /* Giảm margin */
+            margin-top: 8px;
         }
 
         nav ul {
@@ -63,7 +64,7 @@
         }
 
         nav ul li {
-            margin: 8px 0; /* Giảm margin */
+            margin: 8px 0;
         }
 
         nav ul li a {
@@ -71,7 +72,7 @@
             text-decoration: none;
             color: black;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 8px 15px; /* Giảm padding */
+            padding: 8px 15px;
             border-radius: 30px;
             border: 2px solid white;
             font-weight: bold;
@@ -91,11 +92,11 @@
         }
 
         .music-controls {
-            margin-top: 8px; /* Giảm margin */
+            margin-top: 8px;
         }
 
         .music-controls button {
-            padding: 7px 12px; /* Giảm padding */
+            padding: 7px 12px;
             border: none;
             border-radius: 5px;
             background-color: white;
@@ -110,7 +111,7 @@
         }
 
         .name {
-            font-size: 30px; /* Giảm kích thước chữ */
+            font-size: 30px;
             font-weight: bold;
             background: linear-gradient(to right, white, gray, black);
             background-size: 200%;
@@ -129,13 +130,42 @@
         }
 
         .social-logo {
-            width: 30px; /* Kích thước logo */
-            height: 30px; /* Kích thước logo */
-            border-radius: 50%; /* Hình tròn */
-            margin-right: 5px; /* Khoảng cách giữa logo và tên */
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
             vertical-align: middle;
             object-fit: cover;
-            background-color: black; /* Màu nền cho logo */
+            background-color: black;
+        }
+
+        /* Hiệu ứng chói sáng */
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow-animation 0.5s infinite alternate;
+        }
+
+        @keyframes glow-animation {
+            from {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        /* Hiệu ứng chói sáng cho avatar */
+        .glow-avatar {
+            animation: glow-avatar-animation 0.5s infinite alternate;
+        }
+
+        @keyframes glow-avatar-animation {
+            from {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            }
         }
     </style>
 </head>
@@ -147,8 +177,8 @@
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
-            <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
+            <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
         <nav>
@@ -182,7 +212,7 @@
         </nav>
 
         <div class="music-controls">
-            <button id="toggle-music-button">Bật nhạc "Tuyệt nàng đi"</button>
+            <button id="toggle-music-button">Bật nhạc Chill . . .</button>
         </div>
 
         <footer>
@@ -193,18 +223,11 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
+        const nameElement = document.getElementById('name');
+        const avatarElement = document.getElementById('avatar');
         let isPlaying = false;
 
         toggleButton.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
-                toggleButton.textContent = 'Bật nhạc Chill';
-            } else {
-                audio.play();
-                toggleButton.textContent = 'Tắt nhạc';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
-</body>
-</html>
+                toggleButton.textContent = 'B
