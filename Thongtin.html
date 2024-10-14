@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇻🇳 𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏 🇻🇳</title>
+    <title>Thông tin cá nhân</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('https://your-image-url.com'); /* Thay thế URL này bằng URL ảnh nền bạn muốn */
+            background-size: cover; /* Để ảnh nền phủ kín */
+            background-position: center; /* Căn giữa ảnh nền */
             color: #333;
             text-align: center;
             padding: 20px;
@@ -16,7 +18,7 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.8); /* Nền trắng với độ trong suốt */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -43,6 +45,13 @@
             display: inline;
             margin: 0 15px;
         }
+        .info-box {
+            border: 2px solid #007BFF; /* Đường viền màu xanh */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0; /* Khoảng cách trên và dưới */
+            background-color: #e7f3ff; /* Màu nền nhẹ cho khung */
+        }
     </style>
 </head>
 <body>
@@ -50,8 +59,10 @@
         <header>
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
             <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-            <p>Đây là thông tin của <br>🇻🇳 Hoàng Minh Chiến 🇻🇳</p>
         </header>
+        <div class="info-box">
+            <p>Đây là thông tin của Hoàng Minh Chiến!</p>
+        </div>
         <nav>
             <ul>
                 <li>
