@@ -19,7 +19,7 @@
         .container {
             max-width: 600px;
             margin: auto;
-            padding: 20px;
+            padding: 5px; /* Giảm padding */
             text-align: center;
             position: relative;
             top: 50%;
@@ -27,11 +27,11 @@
         }
 
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 70px; /* Giảm kích thước ảnh đại diện */
+            height: 70px; /* Giảm kích thước ảnh đại diện */
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Giảm khoảng cách */
             border: 3px solid transparent;
             background-image: linear-gradient(45deg, silver, white, silver);
             background-clip: border-box;
@@ -49,12 +49,12 @@
         }
 
         h1, p {
-            margin: 10px 0;
+            margin: 6px 0; /* Giảm margin */
             color: white;
         }
 
         nav {
-            margin-top: 20px;
+            margin-top: 8px; /* Giảm margin */
         }
 
         nav ul {
@@ -63,7 +63,7 @@
         }
 
         nav ul li {
-            margin: 15px 0;
+            margin: 8px 0; /* Giảm margin */
         }
 
         nav ul li a {
@@ -71,7 +71,7 @@
             text-decoration: none;
             color: black;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px 25px;
+            padding: 8px 15px; /* Giảm padding */
             border-radius: 30px;
             border: 2px solid white;
             font-weight: bold;
@@ -91,11 +91,11 @@
         }
 
         .music-controls {
-            margin-top: 20px;
+            margin-top: 8px; /* Giảm margin */
         }
 
         .music-controls button {
-            padding: 10px 20px;
+            padding: 7px 12px; /* Giảm padding */
             border: none;
             border-radius: 5px;
             background-color: white;
@@ -110,7 +110,7 @@
         }
 
         .name {
-            font-size: 36px;
+            font-size: 30px; /* Giảm kích thước chữ */
             font-weight: bold;
             background: linear-gradient(to right, white, gray, black);
             background-size: 200%;
@@ -129,19 +129,19 @@
         }
 
         .social-logo {
-            width: 40px; /* Kích thước logo */
-            height: 40px; /* Kích thước logo */
+            width: 30px; /* Kích thước logo */
+            height: 30px; /* Kích thước logo */
             border-radius: 50%; /* Hình tròn */
-            margin-right: 10px; /* Khoảng cách giữa logo và tên */
-            vertical-align: middle; /* Căn giữa với văn bản */
-            object-fit: cover; /* Đảm bảo hình ảnh vừa vặn trong hình tròn */
+            margin-right: 5px; /* Khoảng cách giữa logo và tên */
+            vertical-align: middle;
+            object-fit: cover;
             background-color: black; /* Màu nền cho logo */
         }
     </style>
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/e9e1da249c5435d81182f3aeb03255e57895b84a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/e9e1da249c5435d81182f3aeb03255e57895b84a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -154,27 +154,27 @@
         <nav>
             <ul>
                 <li>
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png">
+                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
                     </a>
                 </li>
                 <li>
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png">
+                    <a href="https://t.me/HoangMinhChien_8">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
                     </a>
                 </li>
                 <li>
-                    <a href="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png">
+                    <a href="https://zalo.me/0345161185">
                         <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
                     </a>
                 </li>
                 <li>
-                    <a href="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png">
+                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
                     </a>
                 </li>
                 <li>
-                    <a href="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png">
+                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
                         <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
                     </a>
                 </li>
@@ -195,13 +195,13 @@
         const toggleButton = document.getElementById('toggle-music-button');
         let isPlaying = false;
 
-        toggleButton.addEventListener('click', () => {
+        toggleButton.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
                 toggleButton.textContent = 'Bật nhạc "Tuyệt nàng đi"';
             } else {
                 audio.play();
-                toggleButton.textContent = 'Tắt nhạc "Tuyệt nàng đi"';
+                toggleButton.textContent = 'Tắt nhạc';
             }
             isPlaying = !isPlaying;
         });
