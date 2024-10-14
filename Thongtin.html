@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇻🇳</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 8px;
+            border: 3px solid transparent;
+            background-image: linear-gradient(45deg, silver, white, silver);
+            background-clip: border-box;
+            animation: border-animation 5s infinite alternate;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes border-animation {
+            0% { border-color: white; }
+            100% { border-color: black; }
+        }
+
+        h1, p {
+            margin: 6px 0;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        nav {
+            margin-top: 8px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 8px 0;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px 15px;
+            border-radius: 30px;
+            border: 2px solid white;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 10px; 
+            font-size: 12px;
+            color: #777;
+        }
+
+        .music-controls {
+            margin-top: 8px;
+        }
+
+        .music-controls button {
+            padding: 7px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .music-controls button:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            background: linear-gradient(to right, white, gray, black);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: text-gradient 5s infinite alternate;
+        }
+
+        @keyframes text-gradient {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
+        }
+
+        .social-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 5px;
+            vertical-align: middle;
+            object-fit: cover;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" preload="auto" loop>
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/aa16c4427fae85ea58cfc75d480920bd3532a8f6/yt1s.com%20-%20%20Th%E1%BB%A7%20%C4%90%C3%B4%20%20Dynasty%20Remix%20%20Close%20x%20Run%20Free%20%20List%20Nh%E1%BA%A1c%20TikTok%20Remix%20Ch%C3%A1y%20Nh%C6%B0%20Fai%20Fai%20.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <header>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
+            <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <p>Xin chào, đây là thông tin của tôi!</p>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/HoangMinhChien_8">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://zalo.me/0345161185">
+                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
+                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-music-button');
+        });
+    </script>
+</body>
+</html>
 
