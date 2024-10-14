@@ -4,292 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin Hoàng Minh Chiến</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 5px;
-            text-align: center;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .profile-img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 8px;
-            border: 3px solid transparent;
-            background-image: linear-gradient(45deg, silver, white, silver);
-            background-clip: border-box;
-            animation: border-animation 5s infinite alternate;
-            transition: transform 0.3s;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes border-animation {
-            0% { border-color: white; }
-            100% { border-color: black; }
-        }
-
-        h1, p {
-            margin: 6px 0;
-            color: white;
-            transition: opacity 0.2s;
-        }
-
-        nav {
-            margin-top: 8px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 8px 0;
-        }
-
-        nav ul li a {
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 8px 15px;
-            border-radius: 30px;
-            border: 2px solid white;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(240, 240, 240, 0.9);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 10px; 
-            font-size: 12px;
-            color: #777;
-        }
-
-        .music-controls {
-            margin-top: 8px;
-        }
-
-        .music-controls button {
-            padding: 7px 12px;
-            border: none;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .music-controls button:hover {
-            background-color: rgba(240, 240, 240, 0.9);
-        }
-
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .wings {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            animation: fly 1s infinite alternate; /* Thêm animation cho đôi cánh */
-        }
-
-        .name {
-            font-size: 30px;
-            font-weight: bold;
-            background: linear-gradient(to right, white, gray, black);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: text-gradient 5s infinite alternate;
-            margin: 0 60px; /* Tạo không gian cho đôi cánh */
-        }
-
-        @keyframes text-gradient {
-            0% {
-                background-position: 0%;
-            }
-            100% {
-                background-position: 100%;
-            }
-        }
-
-        @keyframes fly {
-            0% {
-                transform: translateY(0); /* Vị trí ban đầu */
-            }
-            100% {
-                transform: translateY(-10px); /* Di chuyển lên một chút */
-            }
-        }
-
-        .social-logo {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 5px;
-            vertical-align: middle;
-            object-fit: cover;
-            background-color: black;
-        }
-
-        /* Hiệu ứng chói sáng */
-        .glow {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
-            animation: glow-animation 0.5s infinite alternate;
-        }
-
-        @keyframes glow-animation {
-            from {
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.7);
-            }
-        }
-
-        /* Hiệu ứng chói sáng cho avatar */
-        .glow-avatar {
-            animation: glow-avatar-animation 0.5s infinite alternate;
-        }
-
-        @keyframes glow-avatar-animation {
-            from {
-                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-            }
-            to {
-                box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-            }
-        }
-
-        /* Xoay avatar */
-        .rotate {
-            animation: rotate-animation 1s linear infinite;
-        }
-
-        @keyframes rotate-animation {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/6732321480eefbb1d35f84095cd9877a19d57d7e/7d774ba6e7071873c5874557509ab809.mp3" type="audio/mpeg">
+        <source src="https://github.com/HMC-8/HoangMinhChien/raw/6732321480eefbb1d35f84095cd9877a19d57d7e/7d774ba6e7071873c5874557509ab809.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img glow-avatar" id="avatar" onclick="toggleAvatarRotation()">
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
             <div class="name-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Gold_angel_wing.png/1024px-Gold_angel_wing.png" alt="Wings Left" class="wings" style="transform: rotate(15deg);">
+                <div class="wings left-wing"></div> <!-- Cánh trái -->
                 <h1 class="name glow" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Gold_angel_wing.png/1024px-Gold_angel_wing.png" alt="Wings Right" class="wings" style="transform: rotate(-15deg);">
+                <div class="wings right-wing"></div> <!-- Cánh phải -->
             </div>
             <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
+
         <nav>
             <ul>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="https://t.me/HoangMinhChien_8">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://zalo.me/0345161185">
-                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
-                </a>
-            </li>
-            <li>
-                <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                    <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
-                </a>
-            </li>
-        </ul>
-    </nav>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
+            </ul>
+        </nav>
 
-    <div class="music-controls">
-        <button id="toggle-music-button">Bật nhạc Chill . . .</button>
+        <div class="music-controls">
+            <button id="toggle-music-button">Bật nhạc Chill . . .</button>
+        </div>
+
+        <footer>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-    </footer>
-</div>
+    <script>
+        const audio = document.getElementById('background-music');
+        const toggleButton = document.getElementById('toggle-music-button');
+        const nameElement = document.getElementById('name');
+        let isPlaying = false;
 
-<script>
-    const audio = document.getElementById('background-music');
-    const toggleButton = document.getElementById('toggle-music-button');
-    const avatarElement = document.getElementById('avatar');
-    let isPlaying = false;
-    let isRotating = false;
-
-    // Bật tắt nhạc
-    toggleButton.addEventListener('click', function() {
-        if (isPlaying) {
-            audio.pause();
-            toggleButton.textContent = 'Bật nhạc Chill . . .';
-        } else {
-            audio.play();
-            toggleButton.textContent = 'Tắt nhạc . . .';
-        }
-        isPlaying = !isPlaying;
-    });
-
-    // Xoay và dừng xoay avatar khi click
-    function toggleAvatarRotation() {
-        if (isRotating) {
-            avatarElement.classList.remove('rotate');
-        } else {
-            avatarElement.classList.add('rotate');
-        }
-        isRotating = !isRotating;
-    }
-</script>
+        toggleButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                toggleButton.textContent = 'Bật nhạc Chill . . .';
+                nameElement.classList.remove('glow');
+            } else {
+                audio.play();
+                toggleButton.textContent = 'Tắt nhạc Chill . . .';
+                nameElement.classList.add('glow');
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 </body>
 </html>
