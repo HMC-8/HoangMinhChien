@@ -110,6 +110,20 @@
             background-color: rgba(240, 240, 240, 0.9);
         }
 
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .wings {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            animation: fly 1s infinite alternate; /* Thêm animation cho đôi cánh */
+        }
+
         .name {
             font-size: 30px;
             font-weight: bold;
@@ -118,6 +132,7 @@
             -webkit-background-clip: text;
             color: transparent;
             animation: text-gradient 5s infinite alternate;
+            margin: 0 60px; /* Tạo không gian cho đôi cánh */
         }
 
         @keyframes text-gradient {
@@ -126,6 +141,15 @@
             }
             100% {
                 background-position: 100%;
+            }
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translateY(0); /* Vị trí ban đầu */
+            }
+            100% {
+                transform: translateY(-10px); /* Di chuyển lên một chút */
             }
         }
 
@@ -191,8 +215,12 @@
 
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img glow-avatar" id="avatar">
-            <h1 class="name glow" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img glow-avatar" id="avatar" onclick="toggleAvatarRotation()">
+            <div class="name-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Gold_angel_wing.png/1024px-Gold_angel_wing.png" alt="Wings Left" class="wings" style="transform: rotate(15deg);">
+                <h1 class="name glow" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Gold_angel_wing.png/1024px-Gold_angel_wing.png" alt="Wings Right" class="wings" style="transform: rotate(-15deg);">
+            </div>
             <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
         <nav>
@@ -214,31 +242,54 @@
                 </li>
                 <li>
                     <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
-                    </a>
-                </li>
-            </ul>
-        </nav>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
+                </a>
+            </li>
+            <li>
+                <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
+                    <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <div class="music-controls">
-            <button id="toggle-music-button">Bật nhạc Chill . . .</button>
-        </div>
-
-        <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-        </footer>
+    <div class="music-controls">
+        <button id="toggle-music-button">Bật nhạc Chill . . .</button>
     </div>
 
-    <script>
-        const audio = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music-button');
-        const avatarElement = document.getElementById('avatar');
-        let isPlaying = false;
-        let isRotating = false;
+    <footer>
+        <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+    </footer>
+</div>
 
-        toggleButton.addEventListener
+<script>
+    const audio = document.getElementById('background-music');
+    const toggleButton = document.getElementById('toggle-music-button');
+    const avatarElement = document.getElementById('avatar');
+    let isPlaying = false;
+    let isRotating = false;
+
+    // Bật tắt nhạc
+    toggleButton.addEventListener('click', function() {
+        if (isPlaying) {
+            audio.pause();
+            toggleButton.textContent = 'Bật nhạc Chill . . .';
+        } else {
+            audio.play();
+            toggleButton.textContent = 'Tắt nhạc . . .';
+        }
+        isPlaying = !isPlaying;
+    });
+
+    // Xoay và dừng xoay avatar khi click
+    function toggleAvatarRotation() {
+        if (isRotating) {
+            avatarElement.classList.remove('rotate');
+        } else {
+            avatarElement.classList.add('rotate');
+        }
+        isRotating = !isRotating;
+    }
+</script>
+</body>
+</html>
