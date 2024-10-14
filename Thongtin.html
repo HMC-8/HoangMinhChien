@@ -15,13 +15,21 @@
             height: 100vh;
             overflow: hidden;
             color: white; /* Đặt màu chữ mặc định là trắng */
+            display: flex; /* Sử dụng flex để căn giữa */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            justify-content: center; /* Căn giữa theo chiều ngang */
         }
 
-        header {
-            text-align: center;
-            position: relative;
-            top: 10%; /* Đặt vị trí trên cao */
-            transform: translateY(-50%);
+        .container {
+            text-align: center; /* Căn giữa nội dung trong container */
+            background-color: rgba(255, 255, 255, 0.1); /* Màu nền siêu nhạt cho container */
+            border-radius: 10px; /* Bo góc cho container */
+            padding: 20px; /* Padding cho container */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho container */
+            display: flex; /* Sử dụng flex để căn giữa nội dung */
+            flex-direction: column; /* Căn giữa theo chiều dọc */
+            align-items: center; /* Căn giữa theo chiều ngang */
+            justify-content: center; /* Căn giữa theo chiều dọc */
         }
 
         .profile-img {
@@ -30,6 +38,8 @@
             border-radius: 50%; /* Hình tròn */
             object-fit: cover;
             margin-bottom: 10px;
+            border: 3px solid white; /* Lớp viền trắng mỏng */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Thêm viền sáng */
             animation: glow 1.5s infinite alternate; /* Thêm hiệu ứng phát sáng */
         }
 
@@ -42,9 +52,11 @@
         @keyframes glow {
             0% {
                 text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px rgba(255, 255, 255, 0.7);
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Thêm hiệu ứng phát sáng cho viền */
             }
             100% {
                 text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* Thay đổi hiệu ứng phát sáng cho viền */
             }
         }
 
@@ -98,42 +110,44 @@
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
-        <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
-        <p>Đây là thông tin của Hoàng Minh Chiến!</p> <!-- Đảm bảo chữ trắng -->
-    </header>
-    <nav>
-        <ul>
-            <li>
-                <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook">Facebook
-                </a>
-            </li>
-            <li>
-                <a href="https://t.me/HoangMinhChien_8">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram">Telegram
-                </a>
-            </li>
-            <li>
-                <a href="https://zalo.me/0345161185">
-                    <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo">Zalo
-                </a>
-            </li>
-            <li>
-                <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">YouTube
-                </a>
-            </li>
-            <li>
-                <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                    <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok">TikTok
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <footer>
-        <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-    </footer>
+    <div class="container">
+        <header>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
+            <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <p>Đây là thông tin của Hoàng Minh Chiến!</p>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook">Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/HoangMinhChien_8">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram">Telegram
+                    </a>
+                </li>
+                <li>
+                    <a href="https://zalo.me/0345161185">
+                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo">Zalo
+                    </a>
+                </li>
+                <li>
+                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">YouTube
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
+                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok">TikTok
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
