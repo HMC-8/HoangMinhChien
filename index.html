@@ -139,7 +139,7 @@
             background-color: black;
         }
 
-        /* Hiệu ứng chói sáng */
+        /* Hiệu ứng chói sáng cho tên */
         .glow {
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
             animation: glow-animation 0.5s infinite alternate;
@@ -156,6 +156,7 @@
 
         /* Hiệu ứng chói sáng cho avatar */
         .glow-avatar {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
             animation: glow-avatar-animation 0.5s infinite alternate;
         }
 
@@ -227,8 +228,4 @@
         const avatarElement = document.getElementById('avatar');
         let isPlaying = false;
 
-        toggleButton.addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.textContent = 'Bật nhạc Chill . . .';
-                nameElement.classList.remove
+        toggleButton.addEvent
