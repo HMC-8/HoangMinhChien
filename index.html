@@ -74,15 +74,6 @@
             transition: background-color 0.3s, transform 0.2s;
         }
 
-        nav ul li a img {
-            vertical-align: middle; /* Giữ logo cân bằng với text */
-            margin-right: 10px; /* Khoảng cách giữa logo và text */
-            width: 30px; /* Kích thước logo */
-            height: 30px; /* Đảm bảo tỷ lệ khung hình */
-            border-radius: 50%; /* Cắt logo thành hình tròn */
-            object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
-        }
-
         nav ul li a:hover {
             background-color: rgba(240, 240, 240, 0.9);
             transform: scale(1.05);
@@ -137,7 +128,7 @@
 </head>
 <body>
     <audio id="background-music" preload="auto" loop>
-        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%Ìn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/HMC-8/HoangMinhChien/3ba2128fb85e0e962179d9b1066652032cb1825a/%E2%99%AC-%C4%90O%E1%BA%A0N-TUY%E1%BB%86T-N%C3%80NG-%C4%90I-Ph%C3%A1t-Huy-T4-_-Truzg-Remix-_-_-Th%E1%BA%B9n-Th%C3%B9ng-Nh%C3%ACn-Em-Quay-B%C6%B0%E1%BB%9Bc-%C4%90i-M%C3%A3i-_-Nh%E1%BA%A1c-Flo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -149,11 +140,11 @@
         </header>
         <nav>
             <ul>
-                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrni7mdpEyEl_6Qj_5TGl1FzaoEGMQcgvzg&s" alt="Facebook">Facebook</a></li>
-                <li><a href="https://t.me/HoangMinhChien_8"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61dA_KyDfVQmA4cuspw1GRX-AOvk2i8Tslw&s" alt="Telegram">Telegram</a></li>
-                <li><a href="https://zalo.me/0345161185"><img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo">Zalo</a></li>
-                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="YouTube">YouTube</a></li>
-                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1"><img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok">TikTok</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
 
@@ -188,11 +179,6 @@
         audio.addEventListener('pause', () => {
             isPlaying = false;
             toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"';
-        });
-
-        audio.addEventListener('ended', () => {
-            isPlaying = false;
-            toggleButton.innerText = 'Bật nhạc "Tuyệt nàng đi"'; // Cập nhật trạng thái khi nhạc kết thúc
         });
     </script>
 </body>
