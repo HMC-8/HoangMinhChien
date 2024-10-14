@@ -212,7 +212,7 @@
         </nav>
 
         <div class="music-controls">
-            <button id="toggle-music-button">Bật/Tắt nhạc Chill . . .</button>
+            <button id="toggle-music-button">Bật nhạc Chill . . .</button>
         </div>
 
         <footer>
@@ -224,7 +224,5 @@
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
 
-        toggleButton.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-                toggleButton.text
+        // Biến trạng thái để theo dõi nhạc đang chơi hay dừng
+        let isPlaying =
