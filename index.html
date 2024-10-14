@@ -167,6 +167,25 @@
                 box-shadow: 0 0 20px rgba(255, 255, 255, 1);
             }
         }
+
+        /* Sóng nhạc */
+        .music-wave {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+        .music-wave div {
+            width: 6px;
+            height: 20px;
+            margin: 0 3px;
+            background-color: white;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
     </style>
 </head>
 <body>
@@ -211,30 +230,7 @@
             </ul>
         </nav>
 
-        <div class="music-controls">
-            <button id="toggle-music-button">Bật nhạc Chill . . .</button>
-        </div>
-
-        <footer>
-            <p>© 2024 Hoàng Minh Chiến. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script>
-        const audio = document.getElementById('background-music');
-        const toggleButton = document.getElementById('toggle-music-button');
-        let isPlaying = false;
-
-        toggleButton.addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.textContent = 'Bật nhạc . . .';
-            } else {
-                audio.play();
-                toggleButton.textContent = 'Tắt nhạc . . .';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
-</body>
-</html>
+        <!-- Hộp chứa bộ điều khiển nhạc và đo sóng -->
+        <div class="music-box">
+            <div class="music-controls">
+                <button id="toggle-m
