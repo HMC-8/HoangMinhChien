@@ -223,13 +223,18 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-        const nameElement = document.getElementById('name');
-        const avatarElement = document.getElementById('avatar');
         let isPlaying = false;
 
         toggleButton.addEventListener('click', function() {
             if (isPlaying) {
                 audio.pause();
                 toggleButton.textContent = 'Bật nhạc Chill . . .';
-                nameElement.classList.remove('glow');
-                avatarElement.classList.remove('glow-avatar
+            } else {
+                audio.play();
+                toggleButton.textContent = 'Tắt nhạc . . .';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
