@@ -28,7 +28,6 @@ body {
     border: 3px solid transparent;
     background-image: linear-gradient(45deg, silver, white, silver);
     background-clip: border-box;
-    animation: border-animation 5s infinite alternate;
     transition: transform 0.3s;
 }
 
@@ -36,19 +35,10 @@ body {
     transform: scale(1.05);
 }
 
-@keyframes border-animation {
-    0% { border-color: white; }
-    100% { border-color: black; }
-}
-
 h1, p {
     margin: 6px 0;
     color: white;
     transition: opacity 0.2s;
-}
-
-nav {
-    margin-top: 8px;
 }
 
 nav ul {
@@ -61,31 +51,19 @@ nav ul li {
 }
 
 nav ul li a {
-    display: inline-block;
     text-decoration: none;
     color: black;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 8px 15px;
     border-radius: 30px;
-    border: 2px solid white;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(240, 240, 240, 0.9);
-    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
-    margin-top: 10px; 
+    margin-top: 10px;
     font-size: 12px;
     color: #777;
-}
-
-.music-controls {
-    margin-top: 8px;
 }
 
 .music-controls button {
@@ -96,71 +74,9 @@ footer {
     color: black;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.music-controls button:hover {
-    background-color: rgba(240, 240, 240, 0.9);
-}
-
-.name {
-    font-size: 30px;
-    font-weight: bold;
-    background: linear-gradient(to right, white, gray, black);
-    background-size: 200%;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: text-gradient 5s infinite alternate;
-}
-
-@keyframes text-gradient {
-    0% {
-        background-position: 0%;
-    }
-    100% {
-        background-position: 100%;
-    }
-}
-
-.social-logo {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 5px;
-    vertical-align: middle;
-    object-fit: cover;
-    background-color: black;
-}
-
-/* Hiệu ứng chói sáng cho tên */
-.glow {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
-    animation: glow-animation 0.5s infinite alternate;
-}
-
-/* Hiệu ứng chói sáng cho avatar */
-.glow-avatar {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
-    animation: glow-avatar-animation 0.5s infinite alternate;
-}
-
-@keyframes glow-animation {
-    from {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-    to {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.7);
-    }
-}
-
-@keyframes glow-avatar-animation {
-    from {
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
-    }
-    /* Cánh vàng */
+/* Đôi cánh vàng */
 .wings {
     position: absolute;
     top: 50%;
@@ -181,7 +97,6 @@ footer {
     transform: rotate(-45deg);
 }
 
-/* Hiệu ứng bay cho cánh */
 @keyframes flap {
     0% {
         transform: translateY(0) rotate(0);
@@ -191,10 +106,17 @@ footer {
     }
 }
 
-/* Đặt tên và cánh ở cùng vị trí */
-.name-container {
-    position: relative;
-    display: inline-block;
-    padding: 0 20px;
+/* Hiệu ứng chói sáng cho tên */
+.glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: glow-animation 0.5s infinite alternate;
 }
+
+@keyframes glow-animation {
+    from {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
 }
