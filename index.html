@@ -167,31 +167,6 @@
                 box-shadow: 0 0 20px rgba(255, 255, 255, 1);
             }
         }
-
-        /* Định dạng hộp sóng nhạc */
-        .music-wave-container {
-            margin-top: 20px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .music-wave {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            height: 100%;
-            animation: pulse 0.1s infinite;
-        }
-
-        .music-wave div {
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 5px;
-            transition: height 0.2s ease;
-        }
     </style>
 </head>
 <body>
@@ -237,19 +212,7 @@
         </nav>
 
         <div class="music-controls">
-            <button id="toggle-music-button">Bật nhạc Remix . . .</button>
-            <button id="toggle-remix-button">Bật nhạc Remix . . .</button>
-        </div>
-
-        <div class="music-wave-container">
-            <div class="music-wave" id="music-wave">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <button id="toggle-music-button">Bật/Tắt nhạc Chill . . .</button>
         </div>
 
         <footer>
@@ -260,41 +223,8 @@
     <script>
         const audio = document.getElementById('background-music');
         const toggleButton = document.getElementById('toggle-music-button');
-        const toggleRemixButton = document.getElementById('toggle-remix-button');
-        const musicWave = document.getElementById('music-wave');
-        let isPlaying = false;
-        let isRemixPlaying = false;
 
-        toggleButton.addEventListener('click', function() {
-            if (isPlaying) {
-                audio.pause();
-                toggleButton.textContent = 'Bật nhạc Remix . . .';
-            } else {
+        toggleButton.addEventListener('click', () => {
+            if (audio.paused) {
                 audio.play();
-                toggleButton.textContent = 'Tắt nhạc . . .';
-            }
-            isPlaying = !isPlaying;
-        });
-
-        toggleRemixButton.addEventListener('click', function() {
-            if (isRemixPlaying) {
-                audio.pause();
-                toggleRemixButton.textContent = 'Bật nhạc remix . . .';
-            } else {
-                audio.play();
-                toggleRemixButton.textContent = 'Tắt nhạc remix . . .';
-            }
-            isRemixPlaying = !isRemixPlaying;
-        });
-
-        // Hiệu ứng sóng nhạc
-        setInterval(() => {
-            const waves = musicWave.children;
-            for (let i = 0; i < waves.length; i++) {
-                const height = Math.random() * 40 + 10; // Chiều cao ngẫu nhiên từ 10 đến 50
-                waves[i].style.height = height + 'px';
-            }
-        }, 100);
-    </script>
-</body>
-</html>
+                toggleButton.text
