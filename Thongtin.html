@@ -3,93 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông tin cá nhân</title>
+    <title>Thông tin Hoàng Minh Chiến</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://your-image-url.com'); /* Thay thế URL này bằng URL ảnh nền bạn muốn */
-            background-size: cover; /* Để ảnh nền phủ kín */
-            background-position: center; /* Căn giữa ảnh nền */
-            color: #333;
-            text-align: center;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.imgur.com/fFLOlXU.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: hidden;
         }
+
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: auto;
             padding: 20px;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.8); /* Nền trắng với độ trong suốt */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Bo góc cho container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho container */
         }
+
+        /* Cập nhật hình ảnh đại diện */
         .profile-img {
-            width: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Hiệu ứng sáng cho avatar */
         }
-        .name {
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Hiệu ứng sáng cho tên */
+
+        h1, p {
+            margin: 10px 0;
+            color: white;
         }
-        .social-logo {
-            width: 24px;
-            vertical-align: middle;
-            margin-right: 8px;
+
+        nav {
+            margin-top: 20px;
         }
+
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
+
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 15px 0;
         }
-        .info-box {
-            border: 2px solid #007BFF; /* Đường viền màu xanh */
-            border-radius: 8px;
-            padding: 15px;
-            margin: 20px 0; /* Khoảng cách trên và dưới */
-            background-color: #e7f3ff; /* Màu nền nhẹ cho khung */
+
+        nav ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: 2px solid white;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(240, 240, 240, 0.9);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* Hiệu ứng đổi màu từ trắng sang đen chỉ cho tên */
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(to right, white, gray, black);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: text-gradient 5s infinite alternate;
+        }
+
+        @keyframes text-gradient {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img" id="avatar">
-            <h1 class="name" id="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
+            <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
+            <p>Xin chào, đây là thông tin của tôi!</p>
         </header>
-        <div class="info-box">
-            <p>Đây là thông tin của Hoàng Minh Chiến!</p>
-        </div>
         <nav>
             <ul>
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/667px-2023_Facebook_icon.svg.png" alt="Facebook" class="social-logo">Facebook
-                    </a>
-                </li>
-                <li>
-                    <a href="https://t.me/HoangMinhChien_8">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png" alt="Telegram" class="social-logo">Telegram
-                    </a>
-                </li>
-                <li>
-                    <a href="https://zalo.me/0345161185">
-                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo" class="social-logo">Zalo
-                    </a>
-                </li>
-                <li>
-                    <a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" class="social-logo">YouTube
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/15/12/28/tiktok-6338429_960_720.png" alt="TikTok" class="social-logo">TikTok
-                    </a>
-                </li>
+                <li><a href="https://www.facebook.com/profile.php?id=794478153&mibextid=ZbWKwL">Facebook</a></li>
+                <li><a href="https://t.me/HoangMinhChien_8">Telegram</a></li>
+                <li><a href="https://zalo.me/0345161185">Zalo</a></li>
+                <li><a href="https://youtube.com/@hoangminhchien_8?si=kzWuivBH8LTsyyyW">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@hoangminhchien_8?_t=8qVWv0Eyuzg&_r=1">TikTok</a></li>
             </ul>
         </nav>
         <footer>
