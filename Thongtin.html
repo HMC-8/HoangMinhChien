@@ -28,15 +28,9 @@
             justify-content: center; /* Căn giữa theo chiều dọc */
         }
 
-        .logo {
-            width: 100px; /* Kích thước logo */
-            height: auto; /* Tự động điều chỉnh chiều cao */
-            margin-bottom: 10px; /* Khoảng cách giữa logo và tiêu đề */
-        }
-
         .profile-img {
-            width: 70px; /* Kích thước ảnh đại diện */
-            height: 70px;
+            width: 120px; /* Kích thước ảnh đại diện lớn hơn */
+            height: 120px;
             border-radius: 50%; /* Hình tròn */
             object-fit: cover;
             margin-bottom: 10px;
@@ -90,7 +84,7 @@
         }
 
         nav ul li {
-            margin: 15px 0; /* Tăng khoảng cách giữa các liên kết */
+            margin: 10px 0; /* Giảm khoảng cách */
         }
 
         nav ul li a {
@@ -99,22 +93,21 @@
             text-decoration: none;
             color: black; /* Đổi màu chữ thành đen */
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px; /* Giảm padding */
+            padding: 10px 15px; /* Giảm padding */
             border-radius: 25px; /* Giảm độ cong */
             transition: background-color 0.3s, transform 0.2s;
-            font-size: 18px; /* Tăng kích thước chữ liên kết */
         }
 
         nav ul li img {
             width: 25px; /* Kích thước logo nền tảng */
             height: 25px;
             border-radius: 5px; /* Bo góc cho logo hình vuông */
-            margin-right: 10px; /* Khoảng cách giữa logo và văn bản */
+            margin-right: 8px; /* Khoảng cách giữa logo và văn bản */
         }
 
         nav ul li a:hover {
             background-color: rgba(240, 240, 240, 0.9);
-            transform: scale(1.05); /* Giảm kích thước hiệu ứng */
+            transform: scale(1.03); /* Giảm kích thước hiệu ứng */
         }
 
         footer {
@@ -128,7 +121,6 @@
 <body>
     <div class="container">
         <header>
-            <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Logo" class="logo"> <!-- Sử dụng avatar làm logo -->
             <img src="https://i.imgur.com/5JPtVjC.jpeg" alt="Profile Picture" class="profile-img">
             <h1 class="name">𝑯𝒐𝒂𝒏𝒈 𝑴𝒊𝒏𝒉 𝑪𝒉𝒊𝒆𝒏</h1>
             <p>Đây là thông tin của <br>🇻🇳 Hoàng Minh Chiến 🇻🇳</p>
